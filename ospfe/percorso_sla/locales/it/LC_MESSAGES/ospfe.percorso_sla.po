@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-04 14:35+0000\n"
+"POT-Creation-Date: 2013-02-04 15:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,16 +14,16 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./profiles/default/types/Paziente_SLA.xml
+#: ./profiles/default/types/SLA_Patient.xml
 msgid "Description of the Example Type"
 msgstr ""
 
-#: ./profiles/default/types/Paziente_SLA.xml
-msgid "Paziente SLA"
-msgstr ""
+#: ./profiles/default/types/SLA_Patient.xml
+msgid "SLA Patient"
+msgstr "Paziente SLA"
 
 #. Default: "Patient name"
-#: ./content/pazientesla.py:46
+#: ./content/slapatient.py:46
 msgid "label_title"
 msgstr "Nome paziente"
 
