@@ -48,14 +48,14 @@ Finally, let's return to the front page of our site before continuing
     >>> browser.open(portal_url)
 
 -*- extra stuff goes here -*-
-The Paziente SLA content type
+The SLA Patient content type
 ===============================
 
-In this section we are tesing the Paziente SLA content type by performing
-basic operations like adding, updadating and deleting Paziente SLA content
+In this section we are tesing the SLA Patient content type by performing
+basic operations like adding, updadating and deleting SLA Patient content
 items.
 
-Adding a new Paziente SLA content item
+Adding a new SLA Patient content item
 --------------------------------
 
 We use the 'Add new' menu to add a new content item.
@@ -63,54 +63,54 @@ We use the 'Add new' menu to add a new content item.
     >>> browser.getLink('Add new').click()
 
 Then we select the type of item we want to add. In this case we select
-'Paziente SLA' and click the 'Add' button to get to the add form.
+'SLA Patient' and click the 'Add' button to get to the add form.
 
-    >>> browser.getControl('Paziente SLA').click()
+    >>> browser.getControl('SLA Patient').click()
     >>> browser.getControl(name='form.button.Add').click()
-    >>> 'Paziente SLA' in browser.contents
+    >>> 'SLA Patient' in browser.contents
     True
 
 Now we fill the form and submit it.
 
-    >>> browser.getControl(name='title').value = 'Paziente SLA Sample'
+    >>> browser.getControl(name='title').value = 'SLA Patient Sample'
     >>> browser.getControl('Save').click()
     >>> 'Changes saved' in browser.contents
     True
 
-And we are done! We added a new 'Paziente SLA' content item to the portal.
+And we are done! We added a new 'SLA Patient' content item to the portal.
 
-Updating an existing Paziente SLA content item
+Updating an existing SLA Patient content item
 ---------------------------------------
 
 Let's click on the 'edit' tab and update the object attribute values.
 
     >>> browser.getLink('Edit').click()
-    >>> browser.getControl(name='title').value = 'New Paziente SLA Sample'
+    >>> browser.getControl(name='title').value = 'New SLA Patient Sample'
     >>> browser.getControl('Save').click()
 
 We check that the changes were applied.
 
     >>> 'Changes saved' in browser.contents
     True
-    >>> 'New Paziente SLA Sample' in browser.contents
+    >>> 'New SLA Patient Sample' in browser.contents
     True
 
-Removing a/an Paziente SLA content item
+Removing a/an SLA Patient content item
 --------------------------------
 
-If we go to the home page, we can see a tab with the 'New Paziente SLA
+If we go to the home page, we can see a tab with the 'New SLA Patient
 Sample' title in the global navigation tabs.
 
     >>> browser.open(portal_url)
-    >>> 'New Paziente SLA Sample' in browser.contents
+    >>> 'New SLA Patient Sample' in browser.contents
     True
 
-Now we are going to delete the 'New Paziente SLA Sample' object. First we
-go to the contents tab and select the 'New Paziente SLA Sample' for
+Now we are going to delete the 'New SLA Patient Sample' object. First we
+go to the contents tab and select the 'New SLA Patient Sample' for
 deletion.
 
     >>> browser.getLink('Contents').click()
-    >>> browser.getControl('New Paziente SLA Sample').click()
+    >>> browser.getControl('New SLA Patient Sample').click()
 
 We click on the 'Delete' button.
 
@@ -118,17 +118,17 @@ We click on the 'Delete' button.
     >>> 'Item(s) deleted' in browser.contents
     True
 
-So, if we go back to the home page, there is no longer a 'New Paziente SLA
+So, if we go back to the home page, there is no longer a 'New SLA Patient
 Sample' tab.
 
     >>> browser.open(portal_url)
-    >>> 'New Paziente SLA Sample' in browser.contents
+    >>> 'New SLA Patient Sample' in browser.contents
     False
 
-Adding a new Paziente SLA content item as contributor
+Adding a new SLA Patient content item as contributor
 ------------------------------------------------
 
-Not only site managers are allowed to add Paziente SLA content items, but
+Not only site managers are allowed to add SLA Patient content items, but
 also site contributors.
 
 Let's logout and then login as 'contributor', a portal member that has the
@@ -145,21 +145,21 @@ We use the 'Add new' menu to add a new content item.
 
     >>> browser.getLink('Add new').click()
 
-We select 'Paziente SLA' and click the 'Add' button to get to the add form.
+We select 'SLA Patient' and click the 'Add' button to get to the add form.
 
-    >>> browser.getControl('Paziente SLA').click()
+    >>> browser.getControl('SLA Patient').click()
     >>> browser.getControl(name='form.button.Add').click()
-    >>> 'Paziente SLA' in browser.contents
+    >>> 'SLA Patient' in browser.contents
     True
 
 Now we fill the form and submit it.
 
-    >>> browser.getControl(name='title').value = 'Paziente SLA Sample'
+    >>> browser.getControl(name='title').value = 'SLA Patient Sample'
     >>> browser.getControl('Save').click()
     >>> 'Changes saved' in browser.contents
     True
 
-Done! We added a new Paziente SLA content item logged in as contributor.
+Done! We added a new SLA Patient content item logged in as contributor.
 
 Finally, let's login back as manager.
 
