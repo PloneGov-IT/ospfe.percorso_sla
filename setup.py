@@ -25,6 +25,8 @@ setup(name='ospfe.percorso_sla',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Products.PloneFormGen',
+          'uwosh.pfg.d2c'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
