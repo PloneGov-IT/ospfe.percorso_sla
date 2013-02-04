@@ -4,7 +4,7 @@
    i18n:domain="ospfe.percorso_sla" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">SLA Patient</property>
   <property name="description"
-    i18n:translate="">Description of the Example Type</property>
+    i18n:translate="">A folder that represents a patient</property>
   <property name="content_meta_type">SLAPatient</property>
   <property name="content_icon">folder_icon.gif</property>
   <property name="product">ospfe.percorso_sla</property>

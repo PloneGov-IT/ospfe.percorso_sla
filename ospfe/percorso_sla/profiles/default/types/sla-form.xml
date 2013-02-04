@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <object name="sla-form"
    meta_type="Factory-based Type Information with dynamic views"
-   i18n:domain="uwosh.pfg.d2c"
+   i18n:domain="ospfe.percorso_sla"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="title" i18n:translate="">SLA Form</property>
  <property name="description"

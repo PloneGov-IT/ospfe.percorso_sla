@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-04 15:38+0000\n"
+"POT-Creation-Date: 2013-02-04 16:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,15 @@ msgstr ""
 "Domain: ospfe.percorso_sla\n"
 
 #: ./profiles/default/types/SLA_Patient.xml
-msgid "Description of the Example Type"
+msgid "A folder that represents a patient"
+msgstr ""
+
+#: ./profiles/default/types/sla-form.xml
+msgid "An entry for the content data adapter."
+msgstr ""
+
+#: ./profiles/default/types/sla-form.xml
+msgid "SLA Form"
 msgstr ""
 
 #: ./profiles/default/types/SLA_Patient.xml
