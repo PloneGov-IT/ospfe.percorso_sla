@@ -6,10 +6,10 @@
   <!-- configure your content components here -->
   
   <!-- -*- extra stuff goes here -*- -->
-  <class class=".pazientesla.PazienteSLA">
+  <class class=".slapatient.SLAPatient">
     <require
         permission="zope2.View"
-        interface="..interfaces.IPazienteSLA"
+        interface="..interfaces.ISLAPatient"
         />
   </class>
 

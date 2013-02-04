@@ -1,2 +1,2 @@
 # -*- extra stuff goes here -*-
-from pazientesla import IPazienteSLA
+from slapatient import ISLAPatient
