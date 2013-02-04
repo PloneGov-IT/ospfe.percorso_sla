@@ -1,0 +1,5 @@
+recursive-include docs *
+recursive-include ospfe *
+
+global-exclude *pyc
+global-include *.mo
