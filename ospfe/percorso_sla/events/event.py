@@ -2,6 +2,17 @@
 from ospfe.percorso_sla import logger
 from Products.CMFCore.utils import getToolByName
 
+def _configForm(form, adapter):
+    """configuration of form"""
+    _ = getToolByName(form,'translation_service').translate
+    form.setSubmitLabel(_(msgid='Submit',
+                          default=u'Submit',
+                          domain="ospfe.percorso_sla",
+                          context=form))
+    form.setUseCancelButton(True)
+    form.setActionAdapter((adapter.id))
+    form.setThanksPage('')
+
 def _configAdapter(adapter):
     """configuration of adapter"""
     adapter.setAvoidSecurityChecks(False)
@@ -46,5 +57,7 @@ def create_form(object, event):
     _setTitleAdapter(form, adapter)
     _configAdapter(adapter)
     adapter.reindexObject()
+    
+    _configForm(form,adapter)
     
     logger.info('Form creato')

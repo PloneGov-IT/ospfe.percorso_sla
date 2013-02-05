@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-05 10:04+0000\n"
+"POT-Creation-Date: 2013-02-05 10:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgid "A folder that represents a patient"
 msgstr "Una cartella che rappresenta un paziente"
 
 #. Default: "Adapter save form patient"
-#: ./events/event.py:9
+#: ./events/event.py:26
 msgid "Adapter save form patient"
 msgstr "Adattatore salva scheda paziente"
 
@@ -28,7 +28,7 @@ msgid "An entry for the content data adapter."
 msgstr "Un elemento per l'adattatore di salvataggio dati."
 
 #. Default: "Form of patient"
-#: ./events/event.py:19
+#: ./events/event.py:35
 msgid "Form of patient"
 msgstr "Scheda del paziente"
 
@@ -39,6 +39,11 @@ msgstr "Scheda SLA"
 #: ./profiles/default/types/SLA_Patient.xml
 msgid "SLA Patient"
 msgstr "Paziente SLA"
+
+#. Default: "Submit"
+#: ./events/event.py:8
+msgid "Submit"
+msgstr "Invia"
 
 #. Default: "Patient name"
 #: ./content/slapatient.py:46
