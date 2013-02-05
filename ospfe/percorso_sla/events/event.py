@@ -60,4 +60,5 @@ def create_form(object, event):
     _configForm(form,adapter)
     form.reindexObject()
     
-    logger.info('Form creato')
+    logger.info('Created form %s with adapter %s' % (form.id,adapter.id))
+    
