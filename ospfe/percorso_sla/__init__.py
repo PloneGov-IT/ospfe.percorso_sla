@@ -1,6 +1,7 @@
 """Main product initializer
 """
 
+from logging import getLogger
 from zope.i18nmessageid import MessageFactory
 from ospfe.percorso_sla import config
 
@@ -12,6 +13,7 @@ from Products.CMFCore import utils
 # like _(u"message") will then be extracted by i18n tools for translation.
 
 percorso_slaMessageFactory = MessageFactory('ospfe.percorso_sla')
+logger = getLogger('ospfe.percorso_sla')
 
 
 def initialize(context):

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-04 16:19+0000\n"
+"POT-Creation-Date: 2013-02-05 09:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,10 @@ msgstr "Una cartella che rappresenta un paziente"
 #: ./profiles/default/types/sla-form.xml
 msgid "An entry for the content data adapter."
 msgstr "Un elemento per l'adattatore di salvataggio dati."
+
+#: ./events/event.py:6
+msgid "Form of patient"
+msgstr "Scheda del paziente"
 
 #: ./profiles/default/types/sla-form.xml
 msgid "SLA Form"
