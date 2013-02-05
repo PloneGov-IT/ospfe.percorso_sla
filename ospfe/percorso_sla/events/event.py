@@ -37,7 +37,6 @@ def _setTitleForm(container, form):
                    domain="ospfe.percorso_sla",
                    context=container)
     form.setTitle("%s %s" % (title_form, container.Title()))
-    form.reindexObject(idxs=['Title'])
 
 def _createEntry(container, ctype):
     """create an entry of the ctype type in container folder"""
@@ -59,5 +58,6 @@ def create_form(object, event):
     adapter.reindexObject()
     
     _configForm(form,adapter)
+    form.reindexObject()
     
     logger.info('Form creato')
