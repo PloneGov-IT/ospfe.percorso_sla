@@ -1,0 +1,10 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="ospfe.percorso_sla">
+
+  <subscriber
+ 	  for="ospfe.percorso_sla.interfaces.ISLAPatient
+ 	  Products.Archetypes.interfaces.IObjectInitializedEvent"
+ 	  handler=".event.create_form"/>
+
+</configure>
