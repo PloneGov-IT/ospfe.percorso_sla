@@ -27,4 +27,6 @@ def create_form(object, event):
     form = _createEntry(object, "FormFolder")
     _setTitleForm(object, form)
     
+    adapter = _createEntry(form, "FormSaveData2ContentAdapter")
+    
     logger.info('Form creato')
