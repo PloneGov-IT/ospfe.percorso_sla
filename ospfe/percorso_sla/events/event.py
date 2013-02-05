@@ -2,6 +2,12 @@
 from ospfe.percorso_sla import logger
 from Products.CMFCore.utils import getToolByName
 
+def _configAdapter(adapter):
+    """configuration of adapter"""
+    adapter.setAvoidSecurityChecks(False)
+    adapter.setEntryType('sla-form')
+    adapter.setNiceIds(True)
+
 def _setTitleAdapter(container, adapter):
     """set title of adapter"""
     
@@ -10,7 +16,6 @@ def _setTitleAdapter(container, adapter):
                        default=u'Adapter save form patient',
                        domain="ospfe.percorso_sla",
                        context=container))
-    adapter.reindexObject(idxs=['Title'])
 
 def _setTitleForm(container, form):
     """set title of form"""
@@ -39,5 +44,7 @@ def create_form(object, event):
     
     adapter = _createEntry(form, "FormSaveData2ContentAdapter")
     _setTitleAdapter(form, adapter)
+    _configAdapter(adapter)
+    adapter.reindexObject()
     
     logger.info('Form creato')
