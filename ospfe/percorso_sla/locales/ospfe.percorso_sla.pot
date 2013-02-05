@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-05 09:15+0000\n"
+"POT-Creation-Date: 2013-02-05 10:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,17 @@ msgstr ""
 msgid "A folder that represents a patient"
 msgstr ""
 
+#. Default: "Adapter save form patient"
+#: ./events/event.py:9
+msgid "Adapter save form patient"
+msgstr ""
+
 #: ./profiles/default/types/sla-form.xml
 msgid "An entry for the content data adapter."
 msgstr ""
 
-#: ./events/event.py:6
+#. Default: "Form of patient"
+#: ./events/event.py:19
 msgid "Form of patient"
 msgstr ""
 

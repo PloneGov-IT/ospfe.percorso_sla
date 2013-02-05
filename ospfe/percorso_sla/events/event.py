@@ -2,6 +2,16 @@
 from ospfe.percorso_sla import logger
 from Products.CMFCore.utils import getToolByName
 
+def _setTitleAdapter(container, adapter):
+    """set title of adapter"""
+    
+    _ = getToolByName(container,'translation_service').translate
+    adapter.setTitle(_(msgid='Adapter save form patient',
+                       default=u'Adapter save form patient',
+                       domain="ospfe.percorso_sla",
+                       context=container))
+    adapter.reindexObject(idxs=['Title'])
+
 def _setTitleForm(container, form):
     """set title of form"""
     
@@ -28,5 +38,6 @@ def create_form(object, event):
     _setTitleForm(object, form)
     
     adapter = _createEntry(form, "FormSaveData2ContentAdapter")
+    _setTitleAdapter(form, adapter)
     
     logger.info('Form creato')
