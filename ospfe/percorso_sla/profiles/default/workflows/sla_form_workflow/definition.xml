@@ -3,13 +3,14 @@
              title="SLA Form Workflow"
              description=" - Simple workflow that is useful for basic web sites. - Things start out as private, and can either be submitted for review, or published directly. - The creator of a content item can edit the item even after it is published."
              state_variable="review_state"
-             initial_state="to_be_classified">
+             initial_state="to_be_classified"
+             xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="ospfe.percorso_sla">
  <permission>Access contents information</permission>
  <permission>Change portal events</permission>
  <permission>List folder contents</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
- <state state_id="green" title="Green">
+ <state state_id="green" title="Green" i18n:attributes="title">
   <exit-transition transition_id="red"/>
   <exit-transition transition_id="yellow"/>
   <permission-map name="Access contents information"
@@ -48,7 +49,7 @@
    <permission-role>Reader</permission-role>
   </permission-map>
  </state>
- <state state_id="red" title="Red">
+ <state state_id="red" title="Red" i18n:attributes="title">
   <exit-transition transition_id="green"/>
   <exit-transition transition_id="yellow"/>
   <permission-map name="Access contents information"
@@ -87,7 +88,7 @@
    <permission-role>Reader</permission-role>
   </permission-map>
  </state>
- <state state_id="to_be_classified" title="To be classified">
+ <state state_id="to_be_classified" title="To be classified" i18n:attributes="title">
   <exit-transition transition_id="green"/>
   <exit-transition transition_id="red"/>
   <exit-transition transition_id="yellow"/>
@@ -127,7 +128,7 @@
    <permission-role>Reader</permission-role>
   </permission-map>
  </state>
- <state state_id="yellow" title="Yellow">
+ <state state_id="yellow" title="Yellow" i18n:attributes="title">
   <exit-transition transition_id="green"/>
   <exit-transition transition_id="red"/>
   <permission-map name="Access contents information"
@@ -170,7 +171,7 @@
              new_state="green" trigger="USER"
              before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=green"
-          category="workflow">Green</action>
+          category="workflow" i18n:translate="">Green</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
@@ -178,7 +179,7 @@
  <transition transition_id="red" title="Red" new_state="red"
              trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=red"
-          category="workflow">Red</action>
+          category="workflow" i18n:translate="">Red</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
@@ -187,7 +188,7 @@
              new_state="yellow" trigger="USER"
              before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=yellow"
-          category="workflow">Yellow</action>
+          category="workflow" i18n:translate="">Yellow</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
