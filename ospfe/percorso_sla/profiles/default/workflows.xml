@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_workflow" meta_type="Plone Workflow Tool">
+ <object name="sla_form_workflow" meta_type="Workflow"/>
+ <bindings>
+  <type type_id="sla-form">
+   <bound-workflow workflow_id="sla_form_workflow"/>
+  </type>
+ </bindings>
+</object>
