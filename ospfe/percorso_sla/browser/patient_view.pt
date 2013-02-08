@@ -49,20 +49,12 @@
             <dl>
                 <tal:entry tal:repeat="item patients">
                 <tal:block tal:define="item_url item/getURL|item/absolute_url;
-                                       item_id item/getId|item/id;
                                        item_title_or_id item/pretty_title_or_id;
-                                       item_description item/Description;
                                        item_type item/portal_type;
-                                       item_type_title item/Type;
-                                       item_modified item/ModificationDate;
-                                       item_created item/CreationDate;
                                        item_icon python:plone_view.getIcon(item);
                                        item_type_class python:'contenttype-' + normalizeString(item_type);
                                        item_wf_state item/review_state|python: wtool.getInfoFor(item, 'review_state', '');
                                        item_wf_state_class python:'state-' + normalizeString(item_wf_state);
-                                       item_creator item/Creator;
-                                       item_start item/start/ISO|item/StartDate|nothing;
-                                       item_end item/end/ISO|item/EndDate|nothing;
                                    ">
 
                     <dt metal:define-macro="listitem">
