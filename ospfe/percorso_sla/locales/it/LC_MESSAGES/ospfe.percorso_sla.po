@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-05 10:55+0000\n"
+"POT-Creation-Date: 2013-02-08 11:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,6 +44,11 @@ msgstr "Paziente SLA"
 #: ./events/event.py:8
 msgid "Submit"
 msgstr "Invia"
+
+#. Default: "There are currently no SLA Form for this patient."
+#: ./browser/patient_view.pt:81
+msgid "description_no_sla_form_in_folder"
+msgstr "Non ci sono attualmente schede SLA per questo paziente."
 
 #. Default: "Patient name"
 #: ./content/slapatient.py:46
