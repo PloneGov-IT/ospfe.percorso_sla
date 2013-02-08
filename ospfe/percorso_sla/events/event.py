@@ -18,7 +18,7 @@ def _configAdapter(adapter):
     adapter.setAvoidSecurityChecks(False)
     adapter.setEntryType('sla-form')
     adapter.setNiceIds(True)
-    adapter.setDynamicTitle("python: '%s %s' % (here.aq_inner.aq_parent.aq_parent.Title(),here.created().strftime('%d/%m/%Y'))")
+    #adapter.setDynamicTitle("python: '%s %s' % (here.aq_inner.aq_parent.aq_parent.Title(),here.created().strftime('%d/%m/%Y'))")
 
 def _setTitleAdapter(container, adapter):
     """set title of adapter"""
