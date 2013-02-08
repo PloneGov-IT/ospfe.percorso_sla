@@ -39,22 +39,15 @@
              tal:attributes="class python:(here.Format() in ('text/structured','text/x-rst', ) and ('stx' + kss_class)) or ('plain' + kss_class)">
             <div metal:define-slot="inside" tal:replace="structure text">The body</div>
         </div>
-
+        
         <metal:listingmacro define-macro="listing">
-        <tal:foldercontents define="contentFilter contentFilter|request/contentFilter|nothing;
-                            limit_display limit_display|request/limit_display|nothing;
-                            more_url more_url|request/more_url|string:folder_contents;
-                            is_a_topic python:here.portal_type=='Topic';
-                            folderContents folderContents|nothing; folderContents python:folderContents or is_a_topic and here.queryCatalog(contentFilter, batch=True) or here.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
+        <tal:foldercontents define="patients view/getSlaFormsPatient;
                             use_view_action site_properties/typesUseViewActionInListings|python:();
-                            over_limit python: limit_display and len(folderContents) > limit_display;
-                            folderContents python: (over_limit and folderContents[:limit_display]) or folderContents;
-                            batch folderContents;
                             show_about python:not isAnon or site_properties.allowAnonymousViewAbout;">
-        <tal:listing condition="folderContents">
+        <tal:listing condition="patients">
 
             <dl>
-                <tal:entry tal:repeat="item folderContents">
+                <tal:entry tal:repeat="item patients">
                 <tal:block tal:define="item_url item/getURL|item/absolute_url;
                                        item_id item/getId|item/id;
                                        item_title_or_id item/pretty_title_or_id;
@@ -165,15 +158,10 @@
                 </tal:entry>
             </dl>
             
-            <!-- Navigation -->
-            <tal:block condition="python:not is_a_topic and not batch">
-                <div metal:use-macro="here/batch_macros/macros/navigation" />
-            </tal:block>
-            
         </tal:listing>
         <metal:empty metal:define-slot="no_items_in_listing">
             <p class="discreet"
-               tal:condition="not: folderContents"
+               tal:condition="not: patients"
                i18n:translate="description_no_items_in_folder">
                 There are currently no items in this folder.
             </p>
