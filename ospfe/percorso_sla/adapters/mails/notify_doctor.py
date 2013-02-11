@@ -7,20 +7,24 @@ class NotifyDoctor(PercorsoSLAMailBase):
     Classe invio email ai medici. Estende PercorsoSLAMailBase
     """
     
+    def get_emails(self, users):
+        emails = []
+        portal = getToolByName(self.context, 'portal_url').getPortalObject()
+        mt = getToolByName(self.context, 'portal_membership')
+        for user in users:
+            group = portal.acl_users.getGroupById(user)
+            if group:
+                emails += [mt.getMemberById(m).getProperty('email') for m in group.getUserIds()]
+            else:
+                emails.append(mt.getMemberById(user).getProperty('email'))
+        return emails
+    
     @property
     def _addresses(self):
         """
         """
-        emails = []
-        portal = getToolByName(self.context, 'portal_url').getPortalObject()
-        mt = getToolByName(self.context, 'portal_membership')
-        
         readers = self.sla_patient.users_with_local_role('Reader')
-        for reader in readers:
-            group = portal.acl_users.getGroupById(reader)
-            if group:
-                emails += [mt.getMemberById(m).getProperty('email') for m in group.getUserIds()]
-            else:
-                emails.append(mt.getMemberById(reader).getProperty('email'))
+        readers_emails = self.get_emails(readers)
+        emails = readers_emails
         
         return filter(None, list(set(emails)))
