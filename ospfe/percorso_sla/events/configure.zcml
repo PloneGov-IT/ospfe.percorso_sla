@@ -6,5 +6,10 @@
  	  for="ospfe.percorso_sla.interfaces.ISLAPatient
  	  Products.Archetypes.interfaces.IObjectInitializedEvent"
  	  handler=".event.create_form"/>
+ 	  
+  <subscriber
+ 	  for="uwosh.pfg.d2c.interfaces.IFormSaveData2ContentEntry
+ 	  Products.CMFCore.interfaces.IActionSucceededEvent"
+ 	  handler=".event.send_alert"/>
 
 </configure>

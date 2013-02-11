@@ -1,6 +1,8 @@
 # -*- coding: utf8 -*- 
 from ospfe.percorso_sla import logger
+from ospfe.percorso_sla.adapters.interfaces import IPercorsoSLAMail
 from Products.CMFCore.utils import getToolByName
+from zope.component._api import getAdapter
 
 def _configForm(form, adapter):
     """configuration of form"""
@@ -63,3 +65,16 @@ def create_form(object, event):
     
     logger.info('Created form %s with adapter %s' % (form.id,adapter.id))
     
+    
+def send_alert(object, event):
+    """
+    Evento al cambio di stato del form
+    """
+    wtool = getToolByName(object, "portal_workflow")
+    wf_state = wtool.getInfoFor(object,'review_state')
+    if not wf_state == "red":
+        return
+
+    dc_notification = getAdapter(object, IPercorsoSLAMail, name="notify_doctor")
+    dc_notification.send()
+    logger.info('Notification to doctors sent')

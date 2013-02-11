@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="ospfe.percorso_sla">
+
+	<!-- gestione notifiche cambio stato form -->
+	<adapter
+		name="notify_doctor"
+		provides="..interfaces.IPercorsoSLAMail"
+		for="uwosh.pfg.d2c.interfaces.IFormSaveData2ContentEntry"
+		factory=".notify_doctor.NotifyDoctor"/>
+		
+</configure>
