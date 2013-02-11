@@ -31,6 +31,14 @@ class PercorsoSLAMailBase(object):
         for parent in aq_chain(aq_inner(self.context)):
             if ISLAPatient.providedBy(parent):
                 self.sla_patient = parent
+                
+    @property
+    def acl_users(self):
+        return getToolByName(self.context, 'acl_users')
+    
+    @property
+    def portal_membership(self):
+        return getToolByName(self.context, 'portal_membership')
 
     def send(self):
         '''

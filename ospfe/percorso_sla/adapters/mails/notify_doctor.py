@@ -9,31 +9,22 @@ class NotifyDoctor(PercorsoSLAMailBase):
     
     def get_emails(self, users):
         emails = []
-        portal = getToolByName(self.context, 'portal_url').getPortalObject()
-        mt = getToolByName(self.context, 'portal_membership')
         for user in users:
-            group = portal.acl_users.getGroupById(user)
+            group = self.acl_users.getGroupById(user) or self.acl_users.getGroupByName(user)
             if group:
-                emails += [mt.getMemberById(m).getProperty('email') for m in group.getUserIds()]
+                emails += [member.getProperty('email')
+                           for member in group.getAllGroupMembers()
+                           if (member and member.getProperty('email'))]
             else:
-                emails.append(mt.getMemberById(user).getProperty('email'))
+                member = self.portal_membership.getMemberById(user)
+                if member and member.getProperty('email'):
+                    emails.append(member.getProperty('email'))
         return emails
-    
-    def get_authenticated_member_email(self):
-        mt = getToolByName(self.context, 'portal_membership')
-        authenticated_member = mt.getAuthenticatedMember()
-        if authenticated_member:
-            return authenticated_member.getProperty('email')
-        return ''
     
     @property
     def _addresses(self):
         """
         """
-        readers      = self.sla_patient.users_with_local_role('Reader')
-        contributors = self.sla_patient.users_with_local_role('Contributor')
-        emails = self.get_emails(readers) + self.get_emails(contributors)
-        
-        self.get_authenticated_member_email()
-        
+        notification_groups = self.sla_patient.getNotification_groups()
+        emails = self.get_emails(notification_groups)
         return filter(None, list(set(emails)))
