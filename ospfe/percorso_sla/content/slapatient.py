@@ -5,8 +5,8 @@ from zope.interface import implements
 
 from Products.Archetypes import atapi
 from Products.Archetypes.atapi import AnnotationStorage
-from Products.Archetypes.atapi import RichWidget
-from Products.Archetypes.atapi import TextField
+from Products.Archetypes.atapi import LinesWidget, RichWidget
+from Products.Archetypes.atapi import LinesField, TextField
 from Products.ATContentTypes import ATCTMessageFactory
 from Products.ATContentTypes.configuration import zconf
 from Products.ATContentTypes.content import folder
@@ -34,6 +34,15 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
                     label = ATCTMessageFactory(u'label_body_text', default=u'Body Text'),
                     rows = 25,
                     allow_file_upload = zconf.ATDocument.allow_document_upload),
+    ),
+    
+    LinesField('notification_groups',
+          required=True,
+          searchable=False,
+          widget = LinesWidget(
+                    description = _(u'help_notification_groups',
+                                    default=u'Enter a list of groups of doctors who must be notified if the SLA form changes to the "Red" state (one per line).'),
+                    label = _(u'label_notification_groups', default=u'Notification Groups'))
     ),
 
 ))

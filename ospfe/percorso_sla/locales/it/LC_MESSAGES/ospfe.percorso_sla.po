@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-11 09:20+0000\n"
+"POT-Creation-Date: 2013-02-11 13:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgid "A folder that represents a patient"
 msgstr "Una cartella che rappresenta un paziente"
 
 #. Default: "Adapter save form patient"
-#: ./events/event.py:27
+#: ./events/event.py:29
 msgid "Adapter save form patient"
 msgstr "Adattatore salva scheda paziente"
 
@@ -28,7 +28,7 @@ msgid "An entry for the content data adapter."
 msgstr "Un elemento per l'adattatore di salvataggio dati."
 
 #. Default: "Form of patient"
-#: ./events/event.py:36
+#: ./events/event.py:38
 msgid "Form of patient"
 msgstr "Scheda del paziente"
 
@@ -41,7 +41,7 @@ msgid "SLA Patient"
 msgstr "Paziente SLA"
 
 #. Default: "Submit"
-#: ./events/event.py:8
+#: ./events/event.py:10
 msgid "Submit"
 msgstr "Invia"
 
@@ -50,8 +50,18 @@ msgstr "Invia"
 msgid "description_no_sla_form_in_folder"
 msgstr "Non ci sono attualmente schede SLA per questo paziente."
 
+#. Default: "Enter a list of groups of doctors who must be notified if the SLA form changes to the \"Red\" state (one per line)."
+#: ./content/slapatient.py:43
+msgid "help_notification_groups"
+msgstr "Inserisci un elenco di gruppi di medici che devono essere notificati se la scheda SLA passa allo stato \"Rosso\" (uno per linea)."
+
+#. Default: "Notification Groups"
+#: ./content/slapatient.py:45
+msgid "label_notification_groups"
+msgstr "Gruppi di notifica"
+
 #. Default: "Patient name"
-#: ./content/slapatient.py:46
+#: ./content/slapatient.py:55
 msgid "label_title"
 msgstr "Nome paziente"
 
