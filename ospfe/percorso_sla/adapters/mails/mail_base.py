@@ -5,7 +5,8 @@ from email.MIMEText import MIMEText
 from email.Utils import parseaddr, formataddr
 from ospfe.percorso_sla import logger
 from ospfe.percorso_sla.interfaces import ISLAPatient
-from Products.CMFCore.utils import getToolByName, safe_unicode, log_exc
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode, log_exc
 import socket
 
 class PercorsoSLAMailBase(object):
@@ -35,6 +36,10 @@ class PercorsoSLAMailBase(object):
         '''
         Send the email
         '''
+        if not self.sla_patient:
+            logger('Cannot send notification email: no patient found')
+            return
+        
         self.sendEmail(self._addresses, self._subject, self._text)
 
     def sendEmail(self, addresses, subject, rstText, cc = None):
