@@ -63,7 +63,7 @@ class NotifyDoctor(PercorsoSLAMailBase):
         
         return _(msgid='mail_text_notify_doctor', default=u"""Dear user,
     
-this is a personal communication regarding the SLA Form **${sla_form_title}**, created on **${sla_form_creation_date}** by **${sla_form_owner}**.
+this is a personal communication regarding the SLA Form ${sla_form_title}, created on ${sla_form_creation_date} by ${sla_form_owner}.
 
 The SLA Form of patient ${patient} is in state "Red". Follow the link below for visit the SLA form:
 
