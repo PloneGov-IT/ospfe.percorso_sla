@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_chain, aq_inner
-from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.Utils import parseaddr, formataddr
 from ospfe.percorso_sla import logger
@@ -74,9 +73,7 @@ class PercorsoSLAMailBase(object):
     
         portal      = portal_url.getPortalObject()
         mailHost    = plone_utils.getMailHost()
-        charset     = portal.getProperty('email_charset', '')
-        if not charset:
-            charset = plone_utils.getSiteEncoding()
+        charset     = self.charset
         from_address = portal.getProperty('email_from_address', '')
     
         if not from_address:
@@ -87,12 +84,7 @@ class PercorsoSLAMailBase(object):
         if parseaddr(mfrom)[1] != from_address:
             # formataddr probably got confused by special characters.
             mfrom - from_address
-    
-        email_msg = MIMEMultipart('alternative')
-        email_msg.epilogue = ''
-    
-        translate = getToolByName(self.context,'translation_service').translate
-    
+
         # We must choose the body charset manually
         for body_charset in (charset, 'UTF-8', 'US-ASCII'):
             try:
@@ -101,14 +93,8 @@ class PercorsoSLAMailBase(object):
                 pass
             else:
                 break
-    
-        # Text came from HTML text fields inside adapter, so I will convert it to simple text 
-        stream = transforms.convertTo('text/plain', rstText, mimetype='text/html')
-        textPart = MIMEText(stream.getData().strip(), 'plain', body_charset)
-        email_msg.attach(textPart)
-        htmlPart = MIMEText(renderHTML(rstText, charset=body_charset),
-                            'html', body_charset)
-        email_msg.attach(htmlPart)
+        
+        email_msg = MIMEText(rstText, 'plain', body_charset)
     
         subject = safe_unicode(subject, charset)
     
