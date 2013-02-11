@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-08 17:09+0000\n"
+"POT-Creation-Date: 2013-02-11 09:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,14 +32,6 @@ msgstr "Un elemento per l'adattatore di salvataggio dati."
 msgid "Form of patient"
 msgstr "Scheda del paziente"
 
-#: ./profiles/default/workflows/sla_form_workflow/definition.xml
-msgid "Green"
-msgstr "Verde"
-
-#: ./profiles/default/workflows/sla_form_workflow/definition.xml
-msgid "Red"
-msgstr "Rosso"
-
 #: ./profiles/default/types/sla-form.xml
 msgid "SLA Form"
 msgstr "Scheda SLA"
@@ -52,14 +44,6 @@ msgstr "Paziente SLA"
 #: ./events/event.py:8
 msgid "Submit"
 msgstr "Invia"
-
-#: ./profiles/default/workflows/sla_form_workflow/definition.xml
-msgid "To be classified"
-msgstr "Da classificare"
-
-#: ./profiles/default/workflows/sla_form_workflow/definition.xml
-msgid "Yellow"
-msgstr "Giallo"
 
 #. Default: "There are currently no SLA Form for this patient."
 #: ./browser/patient_view.pt:81

@@ -4,7 +4,7 @@
              description=" - Simple workflow that is useful for basic web sites. - Things start out as private, and can either be submitted for review, or published directly. - The creator of a content item can edit the item even after it is published."
              state_variable="review_state"
              initial_state="to_be_classified"
-             xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="ospfe.percorso_sla">
+             xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="plone">
  <permission>Access contents information</permission>
  <permission>Change portal events</permission>
  <permission>List folder contents</permission>

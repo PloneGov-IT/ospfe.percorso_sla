@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-08 17:09+0000\n"
+"POT-Creation-Date: 2013-02-11 09:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,14 +35,6 @@ msgstr ""
 msgid "Form of patient"
 msgstr ""
 
-#: ./profiles/default/workflows/sla_form_workflow/definition.xml
-msgid "Green"
-msgstr ""
-
-#: ./profiles/default/workflows/sla_form_workflow/definition.xml
-msgid "Red"
-msgstr ""
-
 #: ./profiles/default/types/sla-form.xml
 msgid "SLA Form"
 msgstr ""
@@ -54,14 +46,6 @@ msgstr ""
 #. Default: "Submit"
 #: ./events/event.py:8
 msgid "Submit"
-msgstr ""
-
-#: ./profiles/default/workflows/sla_form_workflow/definition.xml
-msgid "To be classified"
-msgstr ""
-
-#: ./profiles/default/workflows/sla_form_workflow/definition.xml
-msgid "Yellow"
 msgstr ""
 
 #. Default: "There are currently no SLA Form for this patient."

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: auslfe.formonline.content\n"
+"Project-Id-Version: ospfe.percorso_sla\n"
 "POT-Creation-Date: 2012-10-03 12:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Federica D'Elia <federica.delia@redturtle.it>\n"
@@ -29,4 +29,3 @@ msgstr "Da classificare"
 #: ./profiles/default/workflows/sla_form_workflow/definition.xml
 msgid "Yellow"
 msgstr "Giallo"
-
