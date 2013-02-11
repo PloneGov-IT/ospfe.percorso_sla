@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-11 14:21+0000\n"
+"POT-Creation-Date: 2013-02-11 16:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,4 +74,14 @@ msgstr "Gruppi di notifica"
 #: ./content/slapatient.py:56
 msgid "label_title"
 msgstr "Nome paziente"
+
+#. Default: "Dear user,\n    \nthis is a personal communication regarding the SLA Form ${sla_form_title}, created on ${sla_form_creation_date} by ${sla_form_owner}.\n\nThe SLA Form of patient ${patient} is in state \"Red\". Follow the link below for visit the SLA form:\n\n${sla_form_url}\n\nRegards\n"
+#: ./adapters/mails/notify_doctor.py:64
+msgid "mail_text_notify_doctor"
+msgstr "Gentile utente,\n    \nquesta è una comunicazione personale riguardo la scheda SLA ${sla_form_title}, creata il ${sla_form_creation_date} da ${sla_form_owner}.\n\nLa scheda SLA del paziente ${patient} è in stato \"Rosso\". Segui il link qui sotto per visitare la scheda SLA:\n\n${sla_form_url}\n\nSaluti\n"
+
+#. Default: "[SLA Form] - SLA Form in state \"Red\""
+#: ./adapters/mails/notify_doctor.py:36
+msgid "subject_notify_doctor"
+msgstr "[Scheda SLA] - Scheda SLA in stato \"Rosso\""
 
