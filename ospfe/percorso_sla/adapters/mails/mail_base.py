@@ -49,7 +49,10 @@ class PercorsoSLAMailBase(object):
         portal_url = getToolByName(self.context, 'portal_url')
         portal = portal_url.getPortalObject()
         plone_utils = getToolByName(portal, 'plone_utils')
-        return plone_utils.getSiteEncoding()
+        charset = portal.getProperty('email_charset', '')
+        if not charset:
+            charset = plone_utils.getSiteEncoding()
+        return charset
 
     def send(self):
         '''
