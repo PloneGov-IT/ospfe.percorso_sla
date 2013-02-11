@@ -40,6 +40,17 @@ class PercorsoSLAMailBase(object):
     def portal_membership(self):
         return getToolByName(self.context, 'portal_membership')
 
+    @property    
+    def translate(self):
+        return getToolByName(self.context,'translation_service').translate
+
+    @property    
+    def charset(self):
+        portal_url = getToolByName(self.context, 'portal_url')
+        portal = portal_url.getPortalObject()
+        plone_utils = getToolByName(portal, 'plone_utils')
+        return plone_utils.getSiteEncoding()
+
     def send(self):
         '''
         Send the email
