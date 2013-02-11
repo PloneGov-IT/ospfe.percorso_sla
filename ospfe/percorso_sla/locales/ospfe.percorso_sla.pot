@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-11 13:20+0000\n"
+"POT-Creation-Date: 2013-02-11 14:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,18 +53,28 @@ msgstr ""
 msgid "description_no_sla_form_in_folder"
 msgstr ""
 
-#. Default: "Enter a list of groups of doctors who must be notified if the SLA form changes to the \"Red\" state (one per line)."
-#: ./content/slapatient.py:43
+#. Default: "Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the \"Red\" state (one per line)."
+#: ./content/slapatient.py:44
 msgid "help_notification_groups"
 msgstr ""
 
+#. Default: "The ${group} group doesn't exist"
+#: ./validator.py:26
+msgid "invalid_group_error_msg"
+msgstr ""
+
+#. Default: "The following groups don't exist: ${groups}"
+#: ./validator.py:30
+msgid "invalid_groups_error_msg"
+msgstr ""
+
 #. Default: "Notification Groups"
-#: ./content/slapatient.py:45
+#: ./content/slapatient.py:46
 msgid "label_notification_groups"
 msgstr ""
 
 #. Default: "Patient name"
-#: ./content/slapatient.py:55
+#: ./content/slapatient.py:56
 msgid "label_title"
 msgstr ""
 

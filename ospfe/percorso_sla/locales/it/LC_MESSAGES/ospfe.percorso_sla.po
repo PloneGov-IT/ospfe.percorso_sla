@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-11 13:20+0000\n"
+"POT-Creation-Date: 2013-02-11 14:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,18 +50,28 @@ msgstr "Invia"
 msgid "description_no_sla_form_in_folder"
 msgstr "Non ci sono attualmente schede SLA per questo paziente."
 
-#. Default: "Enter a list of groups of doctors who must be notified if the SLA form changes to the \"Red\" state (one per line)."
-#: ./content/slapatient.py:43
+#. Default: "Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the \"Red\" state (one per line)."
+#: ./content/slapatient.py:44
 msgid "help_notification_groups"
-msgstr "Inserisci un elenco di gruppi di medici che devono essere notificati se la scheda SLA passa allo stato \"Rosso\" (uno per linea)."
+msgstr "Inserisci un elenco di gruppi di medici che devono essere notificati se la scheda SLA del paziente passa allo stato \"Rosso\" (uno per linea)."
+
+#. Default: "The ${group} group doesn't exist"
+#: ./validator.py:26
+msgid "invalid_group_error_msg"
+msgstr "Il gruppo ${group} non esiste"
+
+#. Default: "The following groups don't exist: ${groups}"
+#: ./validator.py:30
+msgid "invalid_groups_error_msg"
+msgstr "I seguenti gruppi non esistono: ${groups}"
 
 #. Default: "Notification Groups"
-#: ./content/slapatient.py:45
+#: ./content/slapatient.py:46
 msgid "label_notification_groups"
 msgstr "Gruppi di notifica"
 
 #. Default: "Patient name"
-#: ./content/slapatient.py:55
+#: ./content/slapatient.py:56
 msgid "label_title"
 msgstr "Nome paziente"
 

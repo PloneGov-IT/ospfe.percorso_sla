@@ -16,7 +16,7 @@ from Products.ATContentTypes.content import schemata
 
 from ospfe.percorso_sla.interfaces import ISLAPatient
 from ospfe.percorso_sla.config import PROJECTNAME
-
+from ospfe.percorso_sla.validator import ValidGroupsValidator
 from ospfe.percorso_sla import percorso_slaMessageFactory as _
 
 SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
@@ -39,9 +39,10 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     LinesField('notification_groups',
           required=True,
           searchable=False,
+          validators = (ValidGroupsValidator()),
           widget = LinesWidget(
                     description = _(u'help_notification_groups',
-                                    default=u'Enter a list of groups of doctors who must be notified if the SLA form changes to the "Red" state (one per line).'),
+                                    default=u'Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the "Red" state (one per line).'),
                     label = _(u'label_notification_groups', default=u'Notification Groups'))
     ),
 
