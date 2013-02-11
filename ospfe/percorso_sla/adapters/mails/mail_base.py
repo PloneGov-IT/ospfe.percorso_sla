@@ -69,7 +69,6 @@ class PercorsoSLAMailBase(object):
         """
         portal_url  = getToolByName(self.context, 'portal_url')
         plone_utils = getToolByName(self.context, 'plone_utils')
-        transforms = getToolByName(self.context, 'portal_transforms')
     
         portal      = portal_url.getPortalObject()
         mailHost    = plone_utils.getMailHost()
