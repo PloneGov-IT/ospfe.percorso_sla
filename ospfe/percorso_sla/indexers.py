@@ -7,7 +7,7 @@ def color(object, **kw):
     wtool = getToolByName(object, "portal_workflow")
     wf_state = wtool.getInfoFor(object,'review_state')
     if wf_state in ['red','yellow','green']:
-        return 'Class-%s' % wf_state
+        return 'class-%s' % wf_state
     else:
         return ''
         
