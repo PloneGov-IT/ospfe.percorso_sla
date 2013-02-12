@@ -16,12 +16,18 @@ def _configForm(form, adapter):
     form.setUseCancelButton(True)
     form.setActionAdapter((adapter.id))
     form.setThanksPage('')
+    # titolo campo nascosto
+    title_sla_form = _createEntry(form, 'FormStringField', 'Title SLA Form')
+    title_sla_form.setTitle('Title')
+    title_sla_form.setHidden(True)
+    title_sla_form.reindexObject()
 
 def _configAdapter(adapter):
     """configuration of adapter"""
     adapter.setAvoidSecurityChecks(False)
     adapter.setEntryType('sla-form')
     adapter.setNiceIds(True)
+    adapter.setTitleField('title-sla-form')
     #adapter.setDynamicTitle("python: '%s %s' % (here.aq_inner.aq_parent.aq_parent.Title(),here.created().strftime('%d/%m/%Y'))")
 
 def _getTitleAdapter(container):
@@ -79,6 +85,15 @@ def create_form(object, event):
     
     logger.info('Created form %s with adapter %s' % (form.id,adapter.id))
     
+def create_sla_form(object, event):
+    """
+    Evento alla creazione di una scheda SLA: impostiamo titolo
+    """
+    title_sla_form = '%s %s' % (object.aq_inner.aq_parent.aq_parent.Title(),object.created().strftime('%d/%m/%Y'))
+    title_field = object.getField('title-sla-form')
+    if title_field:
+        title_field.set(object,title_sla_form)
+        object.reindexObject()
     
 def send_alert(object, event):
     """
