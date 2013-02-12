@@ -1,8 +1,10 @@
 # -*- coding: utf8 -*- 
 from ospfe.percorso_sla import logger
 from ospfe.percorso_sla.adapters.interfaces import IPercorsoSLAMail
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 from Products.CMFCore.utils import getToolByName
 from zope.component._api import getAdapter
+from zope.component import getUtility
 
 def _configForm(form, adapter):
     """configuration of form"""
@@ -51,10 +53,10 @@ def _setTitleForm(title_form, form):
     
     form.setTitle(title_form)
 
-def _createEntry(container, ctype):
+def _createEntry(container, ctype, title):
     """create an entry of the ctype type in container folder"""
-    
-    form_id = container.generateUniqueId(ctype)
+    normalizer = getUtility(IIDNormalizer)
+    form_id = normalizer.normalize(title)
     container.invokeFactory(id=form_id,type_name=ctype)
     return getattr(container, form_id)
 
@@ -63,11 +65,11 @@ def create_form(object, event):
     Evento alla creazione di un paziente
     """
     title_form = _getTitleForm(object)
-    form = _createEntry(object, "FormFolder")
+    form = _createEntry(object, "FormFolder", title_form)
     _setTitleForm(title_form, form)
     
     title_adapter = _getTitleAdapter(form)
-    adapter = _createEntry(form, "FormSaveData2ContentAdapter")
+    adapter = _createEntry(form, "FormSaveData2ContentAdapter", title_adapter)
     _setTitleAdapter(title_adapter, adapter)
     _configAdapter(adapter)
     adapter.reindexObject()
