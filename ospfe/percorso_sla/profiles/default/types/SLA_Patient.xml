@@ -6,7 +6,7 @@
   <property name="description"
     i18n:translate="">A folder that represents a patient</property>
   <property name="content_meta_type">SLAPatient</property>
-  <property name="content_icon">folder_icon.gif</property>
+  <property name="content_icon">++resource++ospfe.percorso_sla.images/patient.png</property>
   <property name="product">ospfe.percorso_sla</property>
   <property name="factory">addSLAPatient</property>
   <property name="immediate_view">atct_edit</property>

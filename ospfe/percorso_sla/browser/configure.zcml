@@ -15,5 +15,10 @@
 	template="patient_view.pt"
 	permission="zope2.View"
     />
+    
+  <browser:resourceDirectory
+	name="ospfe.percorso_sla.images"
+	directory="images"
+	/>
 
 </configure>
