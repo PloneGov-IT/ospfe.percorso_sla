@@ -22,14 +22,19 @@ def _configAdapter(adapter):
     adapter.setNiceIds(True)
     #adapter.setDynamicTitle("python: '%s %s' % (here.aq_inner.aq_parent.aq_parent.Title(),here.created().strftime('%d/%m/%Y'))")
 
-def _setTitleAdapter(container, adapter):
-    """set title of adapter"""
+def _getTitleAdapter(container):
+    """get title of adapter"""
     
     _ = getToolByName(container,'translation_service').translate
-    adapter.setTitle(_(msgid='Adapter save form patient',
-                       default=u'Adapter save form patient',
-                       domain="ospfe.percorso_sla",
-                       context=container))
+    return _(msgid='Adapter save form patient',
+             default=u'Adapter save form patient',
+             domain="ospfe.percorso_sla",
+             context=container)
+
+def _setTitleAdapter(title_adapter, adapter):
+    """set title of adapter"""
+    
+    adapter.setTitle(title_adapter)
     
 def _getTitleForm(container):
     """get title of form"""
@@ -61,8 +66,9 @@ def create_form(object, event):
     form = _createEntry(object, "FormFolder")
     _setTitleForm(title_form, form)
     
+    title_adapter = _getTitleAdapter(form)
     adapter = _createEntry(form, "FormSaveData2ContentAdapter")
-    _setTitleAdapter(form, adapter)
+    _setTitleAdapter(title_adapter, adapter)
     _configAdapter(adapter)
     adapter.reindexObject()
     
