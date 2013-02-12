@@ -58,7 +58,7 @@ class PercorsoSLAMailBase(object):
         Send the email
         '''
         if not self.sla_patient:
-            logger('Cannot send notification email: no patient found')
+            logger.info('Cannot send notification email: no patient found')
             return
         
         self.sendEmail(self._addresses, self._subject, self._text)
@@ -76,7 +76,7 @@ class PercorsoSLAMailBase(object):
         from_address = portal.getProperty('email_from_address', '')
     
         if not from_address:
-            logger('Cannot send notification email: email sender address not set')
+            logger.info('Cannot send notification email: email sender address not set')
             return
         from_name = portal.getProperty('email_from_name', '')
         mfrom = formataddr((from_name, from_address))
