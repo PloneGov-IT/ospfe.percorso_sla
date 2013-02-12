@@ -30,16 +30,21 @@ def _setTitleAdapter(container, adapter):
                        default=u'Adapter save form patient',
                        domain="ospfe.percorso_sla",
                        context=container))
-
-def _setTitleForm(container, form):
-    """set title of form"""
+    
+def _getTitleForm(container):
+    """get title of form"""
     
     _ = getToolByName(container,'translation_service').translate
     title_form = _(msgid='Form of patient',
                    default=u'Form of patient',
                    domain="ospfe.percorso_sla",
                    context=container)
-    form.setTitle("%s %s" % (title_form, container.Title()))
+    return "%s %s" % (title_form, container.Title())
+
+def _setTitleForm(title_form, form):
+    """set title of form"""
+    
+    form.setTitle(title_form)
 
 def _createEntry(container, ctype):
     """create an entry of the ctype type in container folder"""
@@ -52,8 +57,9 @@ def create_form(object, event):
     """
     Evento alla creazione di un paziente
     """
+    title_form = _getTitleForm(object)
     form = _createEntry(object, "FormFolder")
-    _setTitleForm(object, form)
+    _setTitleForm(title_form, form)
     
     adapter = _createEntry(form, "FormSaveData2ContentAdapter")
     _setTitleAdapter(form, adapter)
