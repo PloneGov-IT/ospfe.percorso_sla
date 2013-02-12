@@ -42,7 +42,7 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
           validators = (ValidGroupsValidator()),
           widget = LinesWidget(
                     description = _(u'help_notification_groups',
-                                    default=u'Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the "Red" state (one per line).'),
+                                    default=u'Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the "Red" state (one per line). Please verify that the users in the groups have access to the patient.'),
                     label = _(u'label_notification_groups', default=u'Notification Groups'))
     ),
 
