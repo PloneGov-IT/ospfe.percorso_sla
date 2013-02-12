@@ -173,7 +173,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=green"
           category="workflow" i18n:translate="">Green</action>
   <guard>
-   <guard-permission>Review portal content</guard-permission>
+   <guard-permission>Request review</guard-permission>
   </guard>
  </transition>
  <transition transition_id="red" title="Red" new_state="red"
@@ -181,7 +181,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=red"
           category="workflow" i18n:translate="">Red</action>
   <guard>
-   <guard-permission>Review portal content</guard-permission>
+   <guard-permission>Request review</guard-permission>
   </guard>
  </transition>
  <transition transition_id="yellow" title="Yellow"
@@ -190,7 +190,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=yellow"
           category="workflow" i18n:translate="">Yellow</action>
   <guard>
-   <guard-permission>Review portal content</guard-permission>
+   <guard-permission>Request review</guard-permission>
   </guard>
  </transition>
  <worklist worklist_id="reviewer_queue" title="">
