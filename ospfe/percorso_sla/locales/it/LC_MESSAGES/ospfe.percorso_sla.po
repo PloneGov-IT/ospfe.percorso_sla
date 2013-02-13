@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-13 14:31+0000\n"
+"POT-Creation-Date: 2013-02-13 14:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgid "Submit"
 msgstr "Invia"
 
 #. Default: "There are currently no SLA Form for this patient."
-#: ./browser/patient_view.pt:121
+#: ./browser/patient_view.pt:125
 msgid "description_no_sla_form_in_folder"
 msgstr "Non ci sono attualmente schede SLA per questo paziente."
 
@@ -64,6 +64,11 @@ msgstr "Il gruppo ${group} non esiste"
 #: ./validator.py:30
 msgid "invalid_groups_error_msg"
 msgstr "I seguenti gruppi non esistono: ${groups}"
+
+#. Default: "Go to form:"
+#: ./browser/patient_view.pt:63
+msgid "label_go_form"
+msgstr "Vai al form:"
 
 #. Default: "Notification Groups"
 #: ./content/slapatient.py:44

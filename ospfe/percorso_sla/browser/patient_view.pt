@@ -59,6 +59,10 @@
                                    ">
 
                     <dt>
+                    	
+						<span i18n:translate="label_go_form">
+							Go to form:
+						</span>
 
                         <span class="summary"
                               tal:attributes="class string:$item_type_class summary">
