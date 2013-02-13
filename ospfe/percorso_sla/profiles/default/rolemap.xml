@@ -5,9 +5,10 @@
       <role name="Manager" />
 	  <role name="Site Administrator" />
     </permission>
-	<permission name="uwosh.pfg.d2c: Add FormSaveData2ContentEntry" acquire="False">
+    <permission name="uwosh.pfg.d2c: Add FormSaveData2ContentEntry" acquire="True">
       <role name="Manager"/>
 	  <role name="Site Administrator" />
+      <role name="Contributor"/>
     </permission>
   </permissions>
 </rolemap>
