@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-12 08:46+0000\n"
+"POT-Creation-Date: 2013-02-13 14:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 msgid "A folder that represents a patient"
 msgstr "Una cartella che rappresenta un paziente"
 
-#. Default: "Adapter save form patient"
-#: ./events/event.py:29
-msgid "Adapter save form patient"
-msgstr "Adattatore salva scheda paziente"
-
 #: ./profiles/default/types/sla-form.xml
 msgid "An entry for the content data adapter."
 msgstr "Un elemento per l'adattatore di salvataggio dati."
 
-#. Default: "Form of patient"
-#: ./events/event.py:38
-msgid "Form of patient"
-msgstr "Scheda del paziente"
+#. Default: "Filling form of patient"
+#: ./events/event.py:54
+msgid "Filling form of patient"
+msgstr "Compilazione scheda del paziente"
+
+#. Default: "Forms of patient"
+#: ./events/event.py:40
+msgid "Forms of patient"
+msgstr "Schede del paziente"
 
 #: ./profiles/default/types/sla-form.xml
 msgid "SLA Form"
@@ -41,17 +41,17 @@ msgid "SLA Patient"
 msgstr "Paziente SLA"
 
 #. Default: "Submit"
-#: ./events/event.py:10
+#: ./events/event.py:12
 msgid "Submit"
 msgstr "Invia"
 
 #. Default: "There are currently no SLA Form for this patient."
-#: ./browser/patient_view.pt:81
+#: ./browser/patient_view.pt:121
 msgid "description_no_sla_form_in_folder"
 msgstr "Non ci sono attualmente schede SLA per questo paziente."
 
 #. Default: "Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the \"Red\" state (one per line). Please verify that the users in the groups have access to the patient."
-#: ./content/slapatient.py:44
+#: ./content/slapatient.py:42
 msgid "help_notification_groups"
 msgstr "Inserisci un elenco di gruppi di medici che devono essere notificati se la scheda SLA del paziente passa allo stato \"Rosso\" (uno per linea). Si prega di verificare che gli utenti dei gruppi possano accedere al paziente."
 
@@ -66,12 +66,12 @@ msgid "invalid_groups_error_msg"
 msgstr "I seguenti gruppi non esistono: ${groups}"
 
 #. Default: "Notification Groups"
-#: ./content/slapatient.py:46
+#: ./content/slapatient.py:44
 msgid "label_notification_groups"
 msgstr "Gruppi di notifica"
 
 #. Default: "Patient name"
-#: ./content/slapatient.py:56
+#: ./content/slapatient.py:54
 msgid "label_title"
 msgstr "Nome paziente"
 

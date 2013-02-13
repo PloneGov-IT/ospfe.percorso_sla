@@ -37,8 +37,8 @@ def _getTitleAdapter(container):
     """get title of adapter"""
     
     _ = getToolByName(container,'translation_service').translate
-    return _(msgid='Adapter save form patient',
-             default=u'Adapter save form patient',
+    return _(msgid='Forms of patient',
+             default=u'Forms of patient',
              domain="ospfe.percorso_sla",
              context=container)
 
@@ -51,8 +51,8 @@ def _getTitleForm(container):
     """get title of form"""
     
     _ = getToolByName(container,'translation_service').translate
-    title_form = _(msgid='Form of patient',
-                   default=u'Form of patient',
+    title_form = _(msgid='Filling form of patient',
+                   default=u'Filling form of patient',
                    domain="ospfe.percorso_sla",
                    context=container)
     return "%s %s" % (title_form, container.Title())

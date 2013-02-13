@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-12 08:46+0000\n"
+"POT-Creation-Date: 2013-02-13 14:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,18 +21,18 @@ msgstr ""
 msgid "A folder that represents a patient"
 msgstr ""
 
-#. Default: "Adapter save form patient"
-#: ./events/event.py:29
-msgid "Adapter save form patient"
-msgstr ""
-
 #: ./profiles/default/types/sla-form.xml
 msgid "An entry for the content data adapter."
 msgstr ""
 
-#. Default: "Form of patient"
-#: ./events/event.py:38
-msgid "Form of patient"
+#. Default: "Filling form of patient"
+#: ./events/event.py:54
+msgid "Filling form of patient"
+msgstr ""
+
+#. Default: "Forms of patient"
+#: ./events/event.py:40
+msgid "Forms of patient"
 msgstr ""
 
 #: ./profiles/default/types/sla-form.xml
@@ -44,17 +44,17 @@ msgid "SLA Patient"
 msgstr ""
 
 #. Default: "Submit"
-#: ./events/event.py:10
+#: ./events/event.py:12
 msgid "Submit"
 msgstr ""
 
 #. Default: "There are currently no SLA Form for this patient."
-#: ./browser/patient_view.pt:81
+#: ./browser/patient_view.pt:121
 msgid "description_no_sla_form_in_folder"
 msgstr ""
 
 #. Default: "Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the \"Red\" state (one per line). Please verify that the users in the groups have access to the patient."
-#: ./content/slapatient.py:44
+#: ./content/slapatient.py:42
 msgid "help_notification_groups"
 msgstr ""
 
@@ -69,12 +69,12 @@ msgid "invalid_groups_error_msg"
 msgstr ""
 
 #. Default: "Notification Groups"
-#: ./content/slapatient.py:46
+#: ./content/slapatient.py:44
 msgid "label_notification_groups"
 msgstr ""
 
 #. Default: "Patient name"
-#: ./content/slapatient.py:56
+#: ./content/slapatient.py:54
 msgid "label_title"
 msgstr ""
 
