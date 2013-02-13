@@ -14,12 +14,14 @@ class PatientView(BrowserView):
     def getSlaFormsPatient(self):
         patient_path = '/'.join(self.context.getPhysicalPath())
         return self.portal_catalog.searchResults(portal_type="sla-form",
-                                                 path={'query': patient_path})
+                                                 path={'query': patient_path},
+                                                 sort_on='created', sort_order='reverse')
         
     def getFormsFolderPatient(self):
         patient_path = '/'.join(self.context.getPhysicalPath())
         return self.portal_catalog.searchResults(portal_type="FormFolder",
-                                                 path={'query': patient_path})
+                                                 path={'query': patient_path},
+                                                 sort_on='sortable_title', sort_order='ascending')
         
     def check_user_can_fill_form(self):
         portal_membership = getToolByName(self.context, 'portal_membership')
