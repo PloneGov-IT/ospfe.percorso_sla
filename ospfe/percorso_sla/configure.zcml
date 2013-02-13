@@ -21,7 +21,7 @@
       name="default"
       title="Ospfe: Percorso SLA"
       directory="profiles/default"
-      description=""
+      description="Plone module for collecting data about ASL (Amyotrophic Lateral Sclerosis) patients"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

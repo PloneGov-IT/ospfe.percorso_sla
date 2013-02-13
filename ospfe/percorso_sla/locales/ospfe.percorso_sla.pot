@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-13 14:38+0000\n"
+"POT-Creation-Date: 2013-02-13 14:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,12 @@ msgstr ""
 #. Default: "Forms of patient"
 #: ./events/event.py:40
 msgid "Forms of patient"
+msgstr ""
+
+msgid "Ospfe: ASL path"
+msgstr ""
+
+msgid "Plone module for collecting data about ASL (Amyotrophic Lateral Sclerosis) patients"
 msgstr ""
 
 #: ./profiles/default/types/sla-form.xml
@@ -69,7 +75,7 @@ msgid "invalid_groups_error_msg"
 msgstr ""
 
 #. Default: "Go to form:"
-#: ./browser/patient_view.pt:63
+#: ./browser/patient_view.pt:69
 msgid "label_go_form"
 msgstr ""
 
