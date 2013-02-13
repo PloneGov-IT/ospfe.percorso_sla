@@ -3,6 +3,7 @@ from ospfe.percorso_sla import percorso_slaMessageFactory as _
 from Products.CMFCore.utils import getToolByName
 from Products.validation.i18n import recursiveTranslate
 from Products.validation.interfaces.IValidator import IValidator
+import sys
 
 class ValidGroupsValidator:
     """
@@ -10,6 +11,10 @@ class ValidGroupsValidator:
     """
 
     __implements__ = (IValidator,)
+    
+    if not sys.version_info < (2, 6):
+        from zope.interface import implements
+        implements(IValidator) 
 
     name = 'validgroupsvalidator'
     
