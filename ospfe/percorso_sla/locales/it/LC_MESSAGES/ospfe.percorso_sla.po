@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-02-12 08:46+0000\n"
+"POT-Creation-Date: 2013-02-13 14:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,17 +9,17 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: ospfe.percorso_sla\n"
 
 #: ./profiles/default/types/SLA_Patient.xml
 msgid "A folder that represents a patient"
 msgstr "Una cartella che rappresenta un paziente"
 
 #. Default: "Adapter save form patient"
-#: ./events/event.py:29
+#: ./events/event.py:40
 msgid "Adapter save form patient"
 msgstr "Adattatore salva scheda paziente"
 
@@ -28,9 +28,15 @@ msgid "An entry for the content data adapter."
 msgstr "Un elemento per l'adattatore di salvataggio dati."
 
 #. Default: "Form of patient"
-#: ./events/event.py:38
+#: ./events/event.py:54
 msgid "Form of patient"
 msgstr "Scheda del paziente"
+
+msgid "Ospfe: ASL path"
+msgstr "Ospfe: percorso SLA"
+
+msgid "Plone module for collecting data about ASL (Amyotrophic Lateral Sclerosis) patients"
+msgstr "Modulo Plone per raccogliere dai relativi ai pazienti SLA (Sclerosi Laterale Amiotrofica)"
 
 #: ./profiles/default/types/sla-form.xml
 msgid "SLA Form"
@@ -41,17 +47,17 @@ msgid "SLA Patient"
 msgstr "Paziente SLA"
 
 #. Default: "Submit"
-#: ./events/event.py:10
+#: ./events/event.py:12
 msgid "Submit"
 msgstr "Invia"
 
 #. Default: "There are currently no SLA Form for this patient."
-#: ./browser/patient_view.pt:81
+#: ./browser/patient_view.pt:119
 msgid "description_no_sla_form_in_folder"
 msgstr "Non ci sono attualmente schede SLA per questo paziente."
 
 #. Default: "Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the \"Red\" state (one per line). Please verify that the users in the groups have access to the patient."
-#: ./content/slapatient.py:44
+#: ./content/slapatient.py:42
 msgid "help_notification_groups"
 msgstr "Inserisci un elenco di gruppi di medici che devono essere notificati se la scheda SLA del paziente passa allo stato \"Rosso\" (uno per linea). Si prega di verificare che gli utenti dei gruppi possano accedere al paziente."
 
@@ -66,12 +72,12 @@ msgid "invalid_groups_error_msg"
 msgstr "I seguenti gruppi non esistono: ${groups}"
 
 #. Default: "Notification Groups"
-#: ./content/slapatient.py:46
+#: ./content/slapatient.py:44
 msgid "label_notification_groups"
 msgstr "Gruppi di notifica"
 
 #. Default: "Patient name"
-#: ./content/slapatient.py:56
+#: ./content/slapatient.py:54
 msgid "label_title"
 msgstr "Nome paziente"
 
