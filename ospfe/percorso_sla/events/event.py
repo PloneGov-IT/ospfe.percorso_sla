@@ -15,12 +15,15 @@ def _configForm(form, adapter):
                           context=form))
     form.setUseCancelButton(True)
     form.setActionAdapter((adapter.id))
-    form.setThanksPage('')
     # titolo campo nascosto
     title_sla_form = _createEntry(form, 'FormStringField', 'Title SLA Form')
     title_sla_form.setTitle('Title')
     title_sla_form.setHidden(True)
     title_sla_form.reindexObject()
+    # elimina i mailer adapters
+    mailers = form.listFolderContents(contentFilter={"portal_type" : "FormMailerAdapter"})
+    for mailer in mailers:
+        form.manage_delObjects([mailer.id])
 
 def _configAdapter(adapter):
     """configuration of adapter"""
