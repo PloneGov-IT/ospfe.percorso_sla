@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <rolemap>
   <permissions>
-    <!-- -*- extra stuff goes here -*- -->
-    <permission name="ospfe.percorso_sla: Add SLA Patient" acquire="True">
+    <permission name="ospfe.percorso_sla: Add SLA Patient" acquire="False">
       <role name="Manager" />
-      <role name="Owner"/>
-      <role name="Contributor" />
+	  <role name="Site Administrator" />
     </permission>
-	<permission name="uwosh.pfg.d2c: Add FormSaveData2ContentEntry" acquire="True">
+	<permission name="uwosh.pfg.d2c: Add FormSaveData2ContentEntry" acquire="False">
       <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Contributor"/>
+	  <role name="Site Administrator" />
     </permission>
   </permissions>
 </rolemap>

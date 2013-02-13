@@ -13,7 +13,6 @@
   <include package=".browser" />
   <include package=".content" />
   <include package=".events" />
-  <include package=".portlets" />
   
   <adapter name="color" factory=".indexers.color" />
   
@@ -25,14 +24,5 @@
       description=""
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-      
-  <genericsetup:importStep
-      name="ospfe.percorso_sla.various"
-      title="ospfe.percorso_sla: miscellaneous import steps"
-      description="Various import steps that are not handled by GS import/export handlers."
-      handler="ospfe.percorso_sla.setuphandlers.setupVarious">
-  </genericsetup:importStep>
-  
-  <!-- -*- extra stuff goes here -*- -->
 
 </configure>

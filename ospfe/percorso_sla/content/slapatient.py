@@ -12,8 +12,6 @@ from Products.ATContentTypes.configuration import zconf
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
 
-# -*- Message Factory Imported Here -*-
-
 from ospfe.percorso_sla.interfaces import ISLAPatient
 from ospfe.percorso_sla.config import PROJECTNAME
 from ospfe.percorso_sla.validator import ValidGroupsValidator
@@ -37,7 +35,7 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     ),
     
     LinesField('notification_groups',
-          required=True,
+          required=False,
           searchable=False,
           validators = (ValidGroupsValidator()),
           widget = LinesWidget(
