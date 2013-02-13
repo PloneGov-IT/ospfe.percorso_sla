@@ -45,7 +45,6 @@
         <tal:formfolder define="formsfolder view/getFormsFolderPatient;
 								use_view_action site_properties/typesUseViewActionInListings|python:();
 								show_about python:not isAnon or site_properties.allowAnonymousViewAbout;">
-        <tal:listing condition="view/check_user_can_fill_form">
 
             <dl>
                 <tal:entry tal:repeat="item formsfolder">
@@ -58,7 +57,7 @@
                                        item_wf_state_class python:'state-' + normalizeString(item_wf_state);
                                    ">
 
-                    <dt>
+                    <dt tal:condition="python:view.check_user_can_fill_form(item)">
 
                         <span class="summary"
                               tal:attributes="class string:$item_type_class summary">
@@ -81,7 +80,6 @@
                 </tal:entry>
             </dl>
             
-        </tal:listing>
         </tal:formfolder>
         
         <metal:listingmacro define-macro="listing">

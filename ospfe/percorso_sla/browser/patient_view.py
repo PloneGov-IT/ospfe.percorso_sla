@@ -23,32 +23,11 @@ class PatientView(BrowserView):
                                                  path={'query': patient_path},
                                                  sort_on='sortable_title', sort_order='ascending')
         
-    def check_user_can_fill_form(self):
+    def check_user_can_fill_form(self, content):
         portal_membership = getToolByName(self.context, 'portal_membership')
         member = portal_membership.getAuthenticatedMember()
         if not member:
             return False
-        
-        site = getSite()
-        rolesOfperm = site.rolesOfPermission("uwosh.pfg.d2c: Add FormSaveData2ContentEntry")
-        rolesIncontext = member.getRolesInContext(self.context)
-        
-        found = False
-        
-        for role in rolesOfperm:
-            if role["selected"] != "": # will be SELECTED if the permission is granted
-                if role["name"] in rolesIncontext:
-                    found = True
-                    break
-        
-        return found
-        
-#        from AccessControl import getSecurityManager
-#        sm = getSecurityManager()
-#        if sm.checkPermission("uwosh.pfg.d2c: Add FormSaveData2ContentEntry", self.context):
-#            return True
-#        else:
-#            return False
-        
-        
-
+        import pdb;pdb.set_trace()
+        return portal_membership.checkPermission("uwosh.pfg.d2c: Add FormSaveData2ContentEntry",
+                                                 content.getObject())
