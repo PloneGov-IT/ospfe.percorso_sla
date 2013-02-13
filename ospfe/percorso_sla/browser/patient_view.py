@@ -28,6 +28,5 @@ class PatientView(BrowserView):
         member = portal_membership.getAuthenticatedMember()
         if not member:
             return False
-        import pdb;pdb.set_trace()
         return portal_membership.checkPermission("uwosh.pfg.d2c: Add FormSaveData2ContentEntry",
                                                  content.getObject())
