@@ -59,19 +59,19 @@
                                    ">
 
                     <dt>
-                    	
-						<span i18n:translate="label_go_form">
-							Go to form:
-						</span>
 
                         <span class="summary"
                               tal:attributes="class string:$item_type_class summary">
-                            <img tal:replace="structure item_icon/html_tag" />
+                              
                             <a href="#"
                                tal:attributes="href python: item_type in use_view_action and item_url+'/view' or item_url;
-                                               class string:${item_wf_state_class} url"
-                               tal:content="item_title_or_id">
-                                Item Title
+                                               class string:${item_wf_state_class} url">
+								<span i18n:translate="label_go_form">
+									Go to form:
+								</span>
+								<span tal:content="item_title_or_id">
+									Item Title
+								</span>
                             </a>
                         </span>
 
