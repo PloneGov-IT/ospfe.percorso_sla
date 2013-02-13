@@ -1,5 +1,6 @@
+include *.rst
 recursive-include docs *
 recursive-include ospfe *
 
-global-exclude *pyc
+global-exclude *.pyc
 global-include *.mo
