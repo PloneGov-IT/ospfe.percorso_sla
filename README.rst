@@ -66,7 +66,7 @@ Il medico creatore della scheda ha poi la possibilità di cambiare questo stato 
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-07.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-07.png
 
-L'utlizzo dello stato "*Ross*" determina una criticità di livello alto.
+L'utlizzo dello stato "*Rosso*" determina una criticità di livello alto.
 In questo caso tutti gli utenti di tutti i gruppi inseriti nella sezione "*Gruppi di notifica*" discussa sopra,
 saranno contattati via e-mail.
 
