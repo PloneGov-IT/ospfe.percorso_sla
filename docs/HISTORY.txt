@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2 (unreleased)
+0.2 (2013-02-14)
 ----------------
 
 - removed a pdb left in the code
