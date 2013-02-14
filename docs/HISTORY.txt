@@ -4,8 +4,8 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- removed a pbb left in the code
+  [keul]
 
 0.1 (2013-02-13)
 ----------------
