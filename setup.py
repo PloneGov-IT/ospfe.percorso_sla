@@ -18,7 +18,7 @@ setup(name='ospfe.percorso_sla',
         "Framework :: Plone :: 4.2",
         "Programming Language :: Python",
         ],
-      keywords='',
+      keywords='plone plonegov sla form',
       author='RedTurtle Technology',
       author_email='sviluppoplone@redturtle.it',
       url='https://github.com/PloneGov-IT/ospfe.percorso_sla',
@@ -31,7 +31,6 @@ setup(name='ospfe.percorso_sla',
           'setuptools',
           'Products.PloneFormGen',
           'uwosh.pfg.d2c'
-          # -*- Extra requirements: -*-
       ],
       entry_points="""
       # -*- Entry points: -*-
