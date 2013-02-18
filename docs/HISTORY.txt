@@ -4,22 +4,22 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- PFG form default title is empty, so users *must* fill it when
-  go in edit the first time
+- il titolo di default del PFG è ora vuoto, così gli utenti *dovranno* impostarlo
+  alla prima modifica
   [keul]
-- changed generated document title model to "``patient_name - form_title (date)``"
+- cambiato il modello del titolo del documento generato in "``nome_paziente - titolo_form (data)``"
   [keul]
 
 0.2 (2013-02-14)
 ----------------
 
-- removed a pdb left in the code
+- rimosso un PDB dimenticato nel codice
   [keul]
-- minor style fixes
+- Fix ad alcuni stili CSS
   [keul]
 
 0.1 (2013-02-13)
 ----------------
 
-- Initial release
+- Prima release
   [fdelia]
