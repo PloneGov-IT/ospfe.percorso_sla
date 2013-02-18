@@ -4,8 +4,11 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- PFG form default title is empty, so users *must* fill it when
+  go in edit the first time
+  [keul]
+- changed generated document title model to "``patient_name - form_title (date)``"
+  [keul]
 
 0.2 (2013-02-14)
 ----------------

@@ -70,7 +70,7 @@ L'utlizzo dello stato "*Rosso*" determina una criticità di livello alto.
 In questo caso tutti gli utenti di tutti i gruppi inseriti nella sezione "*Gruppi di notifica*" discussa sopra,
 saranno contattati via e-mail.
 
-Credits
+Crediti
 =======
 
 Sviluppato col supporto dell'`Ospedale S. Anna, Ferrara`__; l'Ospedale S. Anna supporta

@@ -42,30 +42,13 @@ def _getTitleAdapter(container):
              domain="ospfe.percorso_sla",
              context=container)
 
-def _setTitleAdapter(title_adapter, adapter):
-    """set title of adapter"""
-    
-    adapter.setTitle(title_adapter)
-    
-def _getTitleForm(container):
-    """get title of form"""
-    
-    _ = getToolByName(container,'translation_service').translate
-    title_form = _(msgid='Filling form of patient',
-                   default=u'Filling form of patient',
-                   domain="ospfe.percorso_sla",
-                   context=container)
-    return "%s %s" % (title_form, container.Title())
-
-def _setTitleForm(title_form, form):
-    """set title of form"""
-    
-    form.setTitle(title_form)
-
 def _createEntry(container, ctype, title):
     """create an entry of the ctype type in container folder"""
     normalizer = getUtility(IIDNormalizer)
-    form_id = normalizer.normalize(title)
+    if title:
+        form_id = normalizer.normalize(title)
+    else:
+        form_id = container.generateUniqueId(ctype)
     container.invokeFactory(id=form_id,type_name=ctype)
     return getattr(container, form_id)
 
@@ -73,13 +56,10 @@ def create_form(object, event):
     """
     Evento alla creazione di un paziente
     """
-    title_form = _getTitleForm(object)
-    form = _createEntry(object, "FormFolder", title_form)
-    _setTitleForm(title_form, form)
-    
+    form = _createEntry(object, "FormFolder", '')
     title_adapter = _getTitleAdapter(form)
     adapter = _createEntry(form, "FormSaveData2ContentAdapter", title_adapter)
-    _setTitleAdapter(title_adapter, adapter)
+    adapter.setTitle(title_adapter)
     _configAdapter(adapter)
     adapter.reindexObject()
     
@@ -92,7 +72,10 @@ def create_sla_form(object, event):
     """
     Evento alla creazione di una scheda SLA: impostiamo titolo
     """
-    title_sla_form = '%s %s' % (object.aq_inner.aq_parent.aq_parent.Title(),object.created().strftime('%d/%m/%Y'))
+    container = object.aq_inner.aq_parent
+    title_sla_form = '%s - %s (%s)' % (container.aq_parent.aq_parent.Title(),
+                                       container.aq_parent.Title(),
+                                       object.created().strftime('%d/%m/%Y'))
     title_field = object.getField('title-sla-form')
     if title_field:
         title_field.set(object,title_sla_form)
