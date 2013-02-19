@@ -41,6 +41,13 @@ L'area del paziente contiene un form da compilare, che va configurato a dovere s
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-03.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-03.png
 
+**NBB**: il form generato contiene un *campo nascosto* con id "``title-sla-form``".
+Tale campo va mantenuto per poter usufruire della funzionalità di generazione automatica del titolo
+(non viene usata la funzionalità di generazione dinamica del titolo nativa di uwosh.pfg.d2c in quanto
+`incompatibile con Plone 3`__).
+
+__ https://github.com/collective/uwosh.pfg.d2c/issues/6
+
 E' possibile inserire altri form all'interno della sezione. La vista principale della sezione dell'utente li
 supporterà.
 

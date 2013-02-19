@@ -4,8 +4,8 @@ Changelog
 0.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- aggiornamenti alla documentazione
+  [keul]
 
 0.3 (2013-02-18)
 ----------------
