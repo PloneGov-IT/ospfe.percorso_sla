@@ -5,7 +5,7 @@ version = '0.4.dev0'
 
 setup(name='ospfe.percorso_sla',
       version=version,
-      description="",
+      description="Modulo Plone per il monotoraggio dei pazienti SLA",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
