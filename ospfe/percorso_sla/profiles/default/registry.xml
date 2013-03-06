@@ -1,0 +1,3 @@
+<registry>
+    <records interface="ospfe.percorso_sla.interfaces.ISLAPatientSettings" />
+</registry>

@@ -69,5 +69,4 @@ The SLA Form of patient ${patient} is in state "Red". Follow the link below for 
 
 ${sla_form_url}
 
-Regards
-""", domain="ospfe.percorso_sla", context=self.context, mapping=mapping)
+Regards""", domain="ospfe.percorso_sla", context=self.context, mapping=mapping)

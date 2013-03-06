@@ -1,0 +1,5 @@
+<registry>
+    <record interface="ospfe.percorso_sla.interfaces.ISLAPatientSettings"
+            field="model_patient"
+            delete="True"/>
+</registry>

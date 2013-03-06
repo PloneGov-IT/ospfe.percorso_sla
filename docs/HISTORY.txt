@@ -6,6 +6,13 @@ Changelog
 
 - aggiornamenti alla documentazione
   [keul]
+- aggiunti campi all'AT
+  [cekk]
+- dato permesso di creazione di un paziente ai contributori
+  [cekk]
+- aggiunta gestione del modello base per i pazienti.
+  Con un evento che copia i form del modello nel nuovo paziente creato
+  [cekk]
 
 0.3 (2013-02-18)
 ----------------

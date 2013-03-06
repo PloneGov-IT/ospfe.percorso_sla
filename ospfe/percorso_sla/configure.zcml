@@ -7,12 +7,14 @@
     
   <five:registerPackage package="." initialize=".initialize" />
   <i18n:registerTranslations directory="locales" />
+  <include package="plone.app.registry" />
 
   <!-- Include the sub-packages that use their own configure.zcml files. -->
   <include package=".adapters" />
   <include package=".browser" />
   <include package=".content" />
   <include package=".events" />
+  <include file="upgrades.zcml" />
   
   <adapter name="color" factory=".indexers.color" />
   
@@ -22,6 +24,14 @@
       title="Ospfe: Percorso SLA"
       directory="profiles/default"
       description="Plone module for collecting data about ASL (Amyotrophic Lateral Sclerosis) patients"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Uninstall Ospfe: Percorso SLA"
+      directory="profiles/uninstall"
+      description="Uninstall Ospfe: Percorso SLA"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

@@ -4,7 +4,9 @@ from ospfe.percorso_sla.adapters.interfaces import IPercorsoSLAMail
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from Products.CMFCore.utils import getToolByName
 from zope.component._api import getAdapter
-from zope.component import getUtility
+from zope.component import getUtility, queryUtility
+from plone.registry.interfaces import IRegistry
+from ospfe.percorso_sla.interfaces import ISLAPatientSettings
 
 def _configForm(form, adapter):
     """configuration of form"""
@@ -49,25 +51,58 @@ def _createEntry(container, ctype, title):
         form_id = normalizer.normalize(title)
     else:
         form_id = container.generateUniqueId(ctype)
-    container.invokeFactory(id=form_id,type_name=ctype)
+    container.invokeFactory(id=form_id, type_name=ctype)
     return getattr(container, form_id)
 
-def create_form(object, event):
+
+def created_patient(obj, event):
     """
     Evento alla creazione di un paziente
     """
-    form = _createEntry(object, "FormFolder", '')
+    registry = queryUtility(IRegistry)
+    settings = registry.forInterface(ISLAPatientSettings, check=False)
+    model_patient_path = getattr(settings, 'model_patient', '')
+    if model_patient_path:
+        portal = obj.portal_url.getPortalObject()
+        portal_path = "/".join(portal.getPhysicalPath())
+        if not model_patient_path.startswith("/"):
+            model_patient_path = "/%s" % model_patient_path
+        model_path = portal_path + model_patient_path
+        model = portal.restrictedTraverse(str(model_path), None)
+        if model:
+            copy_from_model(obj, model)
+        else:
+            create_form(obj)
+    else:
+        create_form(obj)
+
+
+def copy_from_model(patient, model):
+    """
+    Copy default forms from patient model
+    """
+    model_form_ids = [x.getId() for x in model.listFolderContents(contentFilter={"portal_type": "FormFolder"})]
+    forms = model.manage_copyObjects(model_form_ids)
+    patient.manage_pasteObjects(forms)
+    patient.setNotification_groups(model.getNotification_groups())
+
+
+def create_form(patient):
+    """
+    Crea un form di defaul
+    """
+    form = _createEntry(patient, "FormFolder", '')
     title_adapter = _getTitleAdapter(form)
     adapter = _createEntry(form, "FormSaveData2ContentAdapter", title_adapter)
     adapter.setTitle(title_adapter)
     _configAdapter(adapter)
     adapter.reindexObject()
-    
-    _configForm(form,adapter)
+    _configForm(form, adapter)
     form.reindexObject()
-    
-    logger.info('Created form %s with adapter %s' % (form.id,adapter.id))
-    
+
+    logger.info('Created form %s with adapter %s' % (form.id, adapter.id))
+
+
 def create_sla_form(object, event):
     """
     Evento alla creazione di una scheda SLA: impostiamo titolo

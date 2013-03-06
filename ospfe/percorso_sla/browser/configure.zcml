@@ -15,7 +15,14 @@
 	template="patient_view.pt"
 	permission="zope2.View"
     />
-    
+  
+  <browser:page
+        name="sla-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.SLAPatientSettingsControlPanel"
+        permission="cmf.ManagePortal"
+        />
+
   <browser:resourceDirectory
 	name="ospfe.percorso_sla.images"
 	directory="images"
