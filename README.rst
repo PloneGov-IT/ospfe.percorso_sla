@@ -1,6 +1,6 @@
 .. contents:: **Indice**
 
-Introduction
+Introduzione
 ============
 
 Questo prodotto Plone è stato studiato per aiutare i medici nella raccolta dati e condivisione delle informazioni
@@ -36,17 +36,10 @@ che sarà discusso in seguito.
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-02.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-02.png
 
-L'area del paziente contiene un form da compilare, che va configurato a dovere secondo le necessità.
+L'area del paziente appena creata, contiene una serie di form da compilare, che possono essere configurati a dovere secondo le necessità.
 
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-03.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-03.png
-
-**NBB**: il form generato contiene un *campo nascosto* con id "``title-sla-form``".
-Tale campo va mantenuto per poter usufruire della funzionalità di generazione automatica del titolo
-(non viene usata la funzionalità di generazione dinamica del titolo nativa di uwosh.pfg.d2c in quanto
-`incompatibile con Plone 3`__).
-
-__ https://github.com/collective/uwosh.pfg.d2c/issues/6
 
 E' possibile inserire altri form all'interno della sezione. La vista principale della sezione dell'utente li
 supporterà.
@@ -57,12 +50,9 @@ supporterà.
 Utilizzo da parte dei medici
 ----------------------------
 
-Perché i medici siano in grado di compilare i form, devono avere un ruolo di **Contributore** sul form stesso.
+Perché i medici siano in grado di creare pazienti e compilare i form, devono avere un ruolo di **Contributore**.
 
-.. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-05.png/image_preview
-   :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-05.png
-
-A questo punto la compilazione del form permetterà solo di generare delle schede relative al paziente.
+Della creazione di un paziente si è già parlato precedentemente. La compilazione del form, invece, permetterà solo di generare delle schede relative al paziente.
 
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-06.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-06.png
@@ -76,6 +66,24 @@ Il medico creatore della scheda ha poi la possibilità di cambiare questo stato 
 L'utlizzo dello stato "*Rosso*" determina una criticità di livello alto.
 In questo caso tutti gli utenti di tutti i gruppi inseriti nella sezione "*Gruppi di notifica*" discussa sopra,
 saranno contattati via e-mail.
+
+Modello per i pazienti
+======================
+
+Nella configurazione del portale, è presente un pannello di controllo che permette di impostare un Paziente "base" da utilizzare come modello per i futuri pazienti creati.
+
+.. figure:: http://admin.blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-settings.png/image_mini
+   :target: http://admin.blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-settings.png
+
+Il paziente modello non è altro che un semplice contenuto di tipo "Paziente" al cui interno si vanno a creare una serie di form predefiniti che saranno utilizzati come base di partenza per i successivi pazienti.
+Alla creazione di nuovi pazienti, vengono copiati al loro interno i form presenti nel paziente modello, oltre alla lista dei suoi "*Gruppi di notifica*".
+
+**NBB**: il form generato contiene un *campo nascosto* con id "``title-sla-form``".
+Tale campo va mantenuto per poter usufruire della funzionalità di generazione automatica del titolo
+(non viene usata la funzionalità di generazione dinamica del titolo nativa di uwosh.pfg.d2c in quanto
+`incompatibile con Plone 3`__).
+
+__ https://github.com/collective/uwosh.pfg.d2c/issues/6
 
 Crediti
 =======
@@ -97,4 +105,3 @@ Questo prodotto è stato sviluppato da RedTurtle Technology.
 .. image:: http://www.redturtle.it/redturtle_banner.png
    :alt: RedTurtle Technology Site
    :target: http://www.redturtle.it/
-
