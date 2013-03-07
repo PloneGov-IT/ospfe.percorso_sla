@@ -32,16 +32,6 @@
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
         
-        <div metal:define-macro="text-field-view"
-             id="parent-fieldname-text" class="stx"
-             tal:define="kss_class python:getKssClasses('text',
-                         templateId=templateId, macro='text-field-view');
-                         text here/aq_explicit/getText|nothing"
-             tal:condition="text"
-             tal:attributes="class python:(here.Format() in ('text/structured','text/x-rst', ) and ('stx' + kss_class)) or ('plain' + kss_class)">
-            <div metal:define-slot="inside" tal:replace="structure text">The body</div>
-        </div>
-     	
         <tal:formfolder define="formsfolder view/getFormsFolderPatient;
 								use_view_action site_properties/typesUseViewActionInListings|python:();
 								show_about python:not isAnon or site_properties.allowAnonymousViewAbout;">

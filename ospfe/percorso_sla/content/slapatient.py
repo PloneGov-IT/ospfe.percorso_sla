@@ -21,21 +21,6 @@ from ospfe.percorso_sla import percorso_slaMessageFactory as _
 
 SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
-    TextField('text',
-          required=False,
-          searchable=True,
-          primary=True,
-          storage=AnnotationStorage(migrate=True),
-          validators=('isTidyHtmlWithCleanup',),
-          #validators = ('isTidyHtml',),
-          default_output_type='text/x-html-safe',
-          widget=RichWidget(
-                    description='',
-                    label=ATCTMessageFactory(u'label_body_text', default=u'Body Text'),
-                    rows=25,
-                    allow_file_upload=zconf.ATDocument.allow_document_upload),
-    ),
-
     atapi.DateTimeField('birthday',
           required=False,
           widget=atapi.CalendarWidget(
@@ -123,7 +108,8 @@ class SLAPatient(folder.ATFolder):
     def getAppearanceType(self):
         """
         """
-        return DisplayList([('bulbare', 'Bulbare'),
+        return DisplayList([('', ''),
+                            ('bulbare', 'Bulbare'),
                             ('comune', 'Comune'),
                             ('pseudopolinevritico', 'Pseudopolinevritico'),
                             ('piramidale', 'Piramidale')])
