@@ -41,6 +41,11 @@ class SLAPatientSettingsEditForm(controlpanel.RegistryEditForm):
                                                   self.control_panel_view))
 
 
+    def updateWidgets(self):
+        super(SLAPatientSettingsEditForm, self).updateWidgets()
+        self.widgets['model_patient'].size = 100;
+
+
 class SLAPatientSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
     """SLA patient settings control panel.
     """
