@@ -27,6 +27,8 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
                     description=_(u'help_birthday',
                                     default=u'Insert the birthday of this patient.'),
                     label=_(u'label_birthday', default=u'Patient birthday'),
+                    starting_year=1930,
+                    future_years=0,
                     show_hm=False)
     ),
 
@@ -46,6 +48,8 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
                     description=_(u'help_diseaseappearance',
                                     default=u'Insert the year when the disease appears.'),
                     label=_(u'label_diseaseappearance', default=u'Diease appearance'),
+                    starting_year=1930,
+                    future_years=0,
                     show_hm=False)
     ),
 
@@ -55,12 +59,14 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
                     description=_(u'help_diagnosisyear',
                                     default=u'Insert the year when the disease was diagnosed.'),
                     label=_(u'label_diagnosisyear', default=u'Diagnosis year'),
+                    starting_year=1930,
+                    future_years=0,
                     show_hm=False)
     ),
 
     atapi.StringField('appearanceType',
           required=False,
-          vocabulary="getAppearanceType",
+          vocabulary="appearanceTypeVocabulary",
           widget=atapi.SelectionWidget(
                     description=_(u'help_appearancetype',
                                     default=u''),
@@ -69,13 +75,13 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     ),
 
     LinesField('notification_groups',
-          write_permission="ManagePortal",
+          write_permission="Manage portal",
           required=False,
           searchable=False,
           validators=(ValidGroupsValidator()),
           widget=LinesWidget(
                     description=_(u'help_notification_groups',
-                                    default=u'Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the "Red" state (one per line). Please verify that the users in the groups have access to the patient.'),
+                                  default=u'Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the "Red" state (one per line). Please verify that the users in the groups have access to the patient.'),
                     label=_(u'label_notification_groups', default=u'Notification Groups'))
     ),
 
@@ -105,7 +111,7 @@ class SLAPatient(folder.ATFolder):
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
 
-    def getAppearanceType(self):
+    def appearanceTypeVocabulary(self):
         """
         """
         return DisplayList([('', ''),

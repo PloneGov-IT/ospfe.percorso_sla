@@ -1,11 +1,13 @@
 Changelog
 =========
 
-0.5 (unreleased)
+1.0 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- i nuovi campi del paziente sono mostrati nella vista
+  [keul]
+- le combobox nei campi data ora vanno dal 1930 all'anno corrente
+  [keul]
 
 0.4 (2013-03-07)
 ----------------

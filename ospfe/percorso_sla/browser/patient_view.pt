@@ -31,7 +31,27 @@
         </p>
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
-        
+
+		<div tal:condition="context/getBirthday">
+			<strong>Nato il</strong>
+			<span tal:replace="python:context.getBirthday().strftime('%d/%m/%Y')">12/12/1970</span>
+		</div>
+
+		<div tal:condition="context/getDiseaseAppearance">
+			<strong>Comparsa della malattia</strong>
+			<span tal:content="python:context.getDiseaseAppearance().strftime('%d/%m/%Y')">12/12/1970</span>
+		</div>
+
+		<div tal:condition="context/getDiagnosisYear">
+			<strong>Diagnosi della malattia</strong>
+			<span tal:content="python:context.getDiagnosisYear().strftime('%d/%m/%Y')">12/12/1970</span>
+		</div>
+
+		<div tal:condition="context/getAppearanceType">
+			<strong>Tipo di esordio</strong>
+			<span tal:content="context/getAppearanceType">Comune</span>
+		</div>
+
         <tal:formfolder define="formsfolder view/getFormsFolderPatient;
 								use_view_action site_properties/typesUseViewActionInListings|python:();
 								show_about python:not isAnon or site_properties.allowAnonymousViewAbout;">
