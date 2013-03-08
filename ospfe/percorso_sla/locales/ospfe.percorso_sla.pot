@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-03-06 10:54+0000\n"
+"POT-Creation-Date: 2013-03-08 15:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgid "Edit cancelled"
 msgstr ""
 
 #. Default: "Forms of patient"
-#: ./events/event.py:40
+#: ./events/event.py:42
 msgid "Forms of patient"
 msgstr ""
 
@@ -69,40 +69,40 @@ msgid "Save"
 msgstr ""
 
 #. Default: "Submit"
-#: ./events/event.py:12
+#: ./events/event.py:14
 msgid "Submit"
 msgstr ""
 
 #. Default: "There are currently no SLA Form for this patient."
-#: ./browser/patient_view.pt:123
+#: ./browser/patient_view.pt:133
 msgid "description_no_sla_form_in_folder"
 msgstr ""
 
-#: ./content/slapatient.py:80
+#: ./content/slapatient.py:71
 msgid "help_appearancetype"
 msgstr ""
 
 #. Default: "Insert the birthday of this patient."
-#: ./content/slapatient.py:42
+#: ./content/slapatient.py:27
 msgid "help_birthday"
 msgstr ""
 
 #. Default: "Insert the year when the disease was diagnosed."
-#: ./content/slapatient.py:70
+#: ./content/slapatient.py:59
 msgid "help_diagnosisyear"
 msgstr ""
 
 #. Default: "Insert the year when the disease appears."
-#: ./content/slapatient.py:61
+#: ./content/slapatient.py:48
 msgid "help_diseaseappearance"
 msgstr ""
 
 #. Default: "Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the \"Red\" state (one per line). Please verify that the users in the groups have access to the patient."
-#: ./content/slapatient.py:92
+#: ./content/slapatient.py:83
 msgid "help_notification_groups"
 msgstr ""
 
-#: ./content/slapatient.py:52
+#: ./content/slapatient.py:39
 msgid "help_patientgender"
 msgstr ""
 
@@ -122,42 +122,42 @@ msgid "invalid_groups_error_msg"
 msgstr ""
 
 #. Default: "Appearance type"
-#: ./content/slapatient.py:82
+#: ./content/slapatient.py:73
 msgid "label_appearancetype"
 msgstr ""
 
 #. Default: "Patient birthday"
-#: ./content/slapatient.py:44
+#: ./content/slapatient.py:29
 msgid "label_birthday"
 msgstr ""
 
 #. Default: "Diagnosis year"
-#: ./content/slapatient.py:72
+#: ./content/slapatient.py:61
 msgid "label_diagnosisyear"
 msgstr ""
 
 #. Default: "Diease appearance"
-#: ./content/slapatient.py:63
+#: ./content/slapatient.py:50
 msgid "label_diseaseappearance"
 msgstr ""
 
 #. Default: "Go to form:"
-#: ./browser/patient_view.pt:68
+#: ./browser/patient_view.pt:78
 msgid "label_go_form"
 msgstr ""
 
 #. Default: "Notification Groups"
-#: ./content/slapatient.py:94
+#: ./content/slapatient.py:85
 msgid "label_notification_groups"
 msgstr ""
 
 #. Default: "Patient gender"
-#: ./content/slapatient.py:54
+#: ./content/slapatient.py:41
 msgid "label_patientgender"
 msgstr ""
 
 #. Default: "Name and surname"
-#: ./content/slapatient.py:104
+#: ./content/slapatient.py:95
 msgid "label_title"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "mail_text_notify_doctor"
 msgstr ""
 
-#. Default: "Insert the path where the model patient is stored."
+#. Default: "Insert the path where the model patient is stored.\nWhen new patient will be created, all contents from the model will be copied.\nThe \"Notification Groups\" value of the model will be also copied to new contents."
 #: ./interfaces/slasettings.py:15
 msgid "model_patient_help"
 msgstr ""
