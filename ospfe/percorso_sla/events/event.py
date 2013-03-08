@@ -84,7 +84,9 @@ def copy_from_model(patient, model):
     model_form_ids = [x.getId() for x in model.listFolderContents(contentFilter={"portal_type": "FormFolder"})]
     forms = model.manage_copyObjects(model_form_ids)
     patient.manage_pasteObjects(forms)
-    patient.setNotification_groups(model.getNotification_groups())
+    # copy notification groups from model only if not set
+    if not patient.getNotification_groups():
+        patient.setNotification_groups(model.getNotification_groups())
 
 
 def create_form(patient):
