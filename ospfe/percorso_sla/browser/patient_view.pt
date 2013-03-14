@@ -37,6 +37,11 @@
 			<span tal:replace="python:context.getBirthday().strftime('%d/%m/%Y')">12/12/1970</span>
 		</div>
 
+		<div tal:condition="context/getPatientGender">
+			<strong>Sesso</strong>
+			<span tal:replace="python:context.getPatientGender()">F</span>
+		</div>
+
 		<div tal:condition="context/getDiseaseAppearance">
 			<strong>Comparsa della malattia</strong>
 			<span tal:content="python:context.getDiseaseAppearance().strftime('%d/%m/%Y')">12/12/1970</span>

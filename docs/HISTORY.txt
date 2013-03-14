@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.0.1 (unreleased)
+1.0.1 (2013-03-14)
 ------------------
 
 - fix alle traduzioni [keul]
 - copia i gruppi di notifica dal modello solo se non specificato nei nuovi contenuti [keul]
+- viene ora mostrato anche il sesso [keul]
 
 1.0 (2013-03-08)
 ----------------
