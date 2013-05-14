@@ -6,6 +6,7 @@ Changelog
 
 - La mail di avvertimento viene mandata in ogni stato di gravita' [keul]
 - Rimosse traduzioni non utilizzate [keul]
+- Nascosta icona del contenuto nella vista del paziente [keul]
 
 1.0.1 (2013-03-14)
 ------------------

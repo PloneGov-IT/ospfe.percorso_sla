@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-05-14 09:41+0000\n"
+"POT-Creation-Date: 2013-05-14 14:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Submit"
 msgstr "Invia"
 
 #. Default: "There are currently no SLA Form for this patient."
-#: ./browser/patient_view.pt:138
+#: ./browser/patient_view.pt:148
 msgid "description_no_sla_form_in_folder"
 msgstr "Non ci sono attualmente schede SLA per questo paziente."
 
@@ -90,10 +90,12 @@ msgstr "Inserisci l'anno di diagnosi della malattia."
 msgid "help_diseaseappearance"
 msgstr "Inserisci l'anno di esordio della malattia."
 
-#. Default: "Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the \"Red\" state (one per line). Please verify that the users in the groups have access to the patient."
+#. Default: "Enter a list of groups of doctors who must be notified on state changes of the document (one per line).\nPlease verify that the users in the groups have access to the patient."
 #: ./content/slapatient.py:79
 msgid "help_notification_groups"
-msgstr "Inserisci un elenco di gruppi di medici che devono essere notificati se la scheda SLA del paziente passa allo stato \"Rosso\" (uno per linea). Si prega di verificare che gli utenti dei gruppi possano accedere al paziente."
+msgstr ""
+"Inserisci un elenco di gruppi di medici che devono essere notificati al cambio di stato del documento (uno per linea).\n"
+"Si prega di verificare che gli utenti dei gruppi possano accedere al paziente."
 
 #. Default: "Set SLA patient configurations"
 #: ./browser/controlpanel.py:22
@@ -131,12 +133,12 @@ msgid "label_diseaseappearance"
 msgstr "Esordio della malattia"
 
 #. Default: "Go to form:"
-#: ./browser/patient_view.pt:83
+#: ./browser/patient_view.pt:93
 msgid "label_go_form"
 msgstr "Vai al form:"
 
 #. Default: "Notification Groups"
-#: ./content/slapatient.py:81
+#: ./content/slapatient.py:82
 msgid "label_notification_groups"
 msgstr "Gruppi di notifica"
 
@@ -146,12 +148,12 @@ msgid "label_patientgender"
 msgstr "Sesso"
 
 #. Default: "Name and surname"
-#: ./content/slapatient.py:91
+#: ./content/slapatient.py:92
 msgid "label_title"
 msgstr "Nome e cognome"
 
 #. Default: "Dear user,\n\nthis is a personal communication regarding the SLA Form ${sla_form_title}, created on ${sla_form_creation_date} by ${sla_form_owner}.\n\nThe SLA Form of patient ${patient} is in state \"${review_state}\". Follow the link below for visit the SLA form:\n\n${sla_form_url}\n\nRegards"
-#: ./adapters/mails/notify_doctor.py:73
+#: ./adapters/mails/notify_doctor.py:74
 msgid "mail_text_notify_doctor"
 msgstr ""
 "Gentile utente,\n"
@@ -178,7 +180,7 @@ msgid "model_patient_label"
 msgstr "Modello paziente"
 
 #. Default: "[SLA Form] - SLA Form in state \"Red\""
-#: ./adapters/mails/notify_doctor.py:39
+#: ./adapters/mails/notify_doctor.py:38
 msgid "subject_notify_doctor"
 msgstr "[Scheda SLA] - Scheda SLA in stato \"Rosso\""
 
