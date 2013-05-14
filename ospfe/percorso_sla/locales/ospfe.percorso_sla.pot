@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-03-08 15:02+0000\n"
+"POT-Creation-Date: 2013-05-14 09:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,12 +74,8 @@ msgid "Submit"
 msgstr ""
 
 #. Default: "There are currently no SLA Form for this patient."
-#: ./browser/patient_view.pt:133
+#: ./browser/patient_view.pt:138
 msgid "description_no_sla_form_in_folder"
-msgstr ""
-
-#: ./content/slapatient.py:71
-msgid "help_appearancetype"
 msgstr ""
 
 #. Default: "Insert the birthday of this patient."
@@ -88,22 +84,18 @@ msgid "help_birthday"
 msgstr ""
 
 #. Default: "Insert the year when the disease was diagnosed."
-#: ./content/slapatient.py:59
+#: ./content/slapatient.py:57
 msgid "help_diagnosisyear"
 msgstr ""
 
 #. Default: "Insert the year when the disease appears."
-#: ./content/slapatient.py:48
+#: ./content/slapatient.py:46
 msgid "help_diseaseappearance"
 msgstr ""
 
 #. Default: "Enter a list of groups of doctors who must be notified if the SLA form of patient changes to the \"Red\" state (one per line). Please verify that the users in the groups have access to the patient."
-#: ./content/slapatient.py:83
+#: ./content/slapatient.py:79
 msgid "help_notification_groups"
-msgstr ""
-
-#: ./content/slapatient.py:39
-msgid "help_patientgender"
 msgstr ""
 
 #. Default: "Set SLA patient configurations"
@@ -122,7 +114,7 @@ msgid "invalid_groups_error_msg"
 msgstr ""
 
 #. Default: "Appearance type"
-#: ./content/slapatient.py:73
+#: ./content/slapatient.py:69
 msgid "label_appearancetype"
 msgstr ""
 
@@ -132,37 +124,37 @@ msgid "label_birthday"
 msgstr ""
 
 #. Default: "Diagnosis year"
-#: ./content/slapatient.py:61
+#: ./content/slapatient.py:59
 msgid "label_diagnosisyear"
 msgstr ""
 
 #. Default: "Diease appearance"
-#: ./content/slapatient.py:50
+#: ./content/slapatient.py:48
 msgid "label_diseaseappearance"
 msgstr ""
 
 #. Default: "Go to form:"
-#: ./browser/patient_view.pt:78
+#: ./browser/patient_view.pt:83
 msgid "label_go_form"
 msgstr ""
 
 #. Default: "Notification Groups"
-#: ./content/slapatient.py:85
+#: ./content/slapatient.py:81
 msgid "label_notification_groups"
 msgstr ""
 
 #. Default: "Patient gender"
-#: ./content/slapatient.py:41
+#: ./content/slapatient.py:39
 msgid "label_patientgender"
 msgstr ""
 
 #. Default: "Name and surname"
-#: ./content/slapatient.py:95
+#: ./content/slapatient.py:91
 msgid "label_title"
 msgstr ""
 
-#. Default: "Dear user,\n    \nthis is a personal communication regarding the SLA Form ${sla_form_title}, created on ${sla_form_creation_date} by ${sla_form_owner}.\n\nThe SLA Form of patient ${patient} is in state \"Red\". Follow the link below for visit the SLA form:\n\n${sla_form_url}\n\nRegards"
-#: ./adapters/mails/notify_doctor.py:64
+#. Default: "Dear user,\n\nthis is a personal communication regarding the SLA Form ${sla_form_title}, created on ${sla_form_creation_date} by ${sla_form_owner}.\n\nThe SLA Form of patient ${patient} is in state \"${review_state}\". Follow the link below for visit the SLA form:\n\n${sla_form_url}\n\nRegards"
+#: ./adapters/mails/notify_doctor.py:73
 msgid "mail_text_notify_doctor"
 msgstr ""
 
@@ -177,7 +169,7 @@ msgid "model_patient_label"
 msgstr ""
 
 #. Default: "[SLA Form] - SLA Form in state \"Red\""
-#: ./adapters/mails/notify_doctor.py:36
+#: ./adapters/mails/notify_doctor.py:39
 msgid "subject_notify_doctor"
 msgstr ""
 

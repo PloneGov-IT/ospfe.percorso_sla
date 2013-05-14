@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.0.2 (unreleased)
+1.1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- La mail di avvertimento viene mandata in ogni stato di gravita' [keul]
+- Rimosse traduzioni non utilizzate [keul]
 
 1.0.1 (2013-03-14)
 ------------------

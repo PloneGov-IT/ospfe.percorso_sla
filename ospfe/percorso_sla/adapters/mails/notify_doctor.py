@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from ospfe.percorso_sla.adapters.mails.mail_base import PercorsoSLAMailBase
+
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
+
+from ospfe.percorso_sla.adapters.mails.mail_base import PercorsoSLAMailBase
 
 class NotifyDoctor(PercorsoSLAMailBase):
     """
@@ -47,6 +49,13 @@ class NotifyDoctor(PercorsoSLAMailBase):
             slaformAuthor = slaformCreatorInfo['fullname'] or slaformCreator
         return slaformAuthor
 
+    @property
+    def slaform_review_state(self):
+        wtool = getToolByName(self.context, 'portal_workflow')
+        review_state = wtool.getInfoFor(self.context, 'review_state')
+        if review_state:
+            return review_state.title()
+
     @property        
     def _text(self):
         _ = self.translate
@@ -57,15 +66,16 @@ class NotifyDoctor(PercorsoSLAMailBase):
         mapping = dict(sla_form_title = su(self.context.title_or_id()),
                        sla_form_creation_date = su(self.context.toLocalizedTime(self.context.created())),
                        sla_form_owner = su(self.slaformCreator),
+                       review_state = su(self.translate(self.slaform_review_state, domain="plone")),
                        patient = su(self.sla_patient.title_or_id()),
                        sla_form_url = su(self.context.absolute_url()),
                        )
         
         return _(msgid='mail_text_notify_doctor', default=u"""Dear user,
-    
+
 this is a personal communication regarding the SLA Form ${sla_form_title}, created on ${sla_form_creation_date} by ${sla_form_owner}.
 
-The SLA Form of patient ${patient} is in state "Red". Follow the link below for visit the SLA form:
+The SLA Form of patient ${patient} is in state "${review_state}". Follow the link below for visit the SLA form:
 
 ${sla_form_url}
 

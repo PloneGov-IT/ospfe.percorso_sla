@@ -124,9 +124,7 @@ def send_alert(object, event):
     """
     wtool = getToolByName(object, "portal_workflow")
     wf_state = wtool.getInfoFor(object,'review_state')
-    if not wf_state == "red":
-        return
-
-    dc_notification = getAdapter(object, IPercorsoSLAMail, name="notify_doctor")
-    dc_notification.send()
-    logger.info('Notification to doctors sent')
+    if wf_state in ('red', 'yellow', 'green'):
+        dc_notification = getAdapter(object, IPercorsoSLAMail, name="notify_doctor")
+        dc_notification.send()
+        logger.info('Notification to doctors sent')

@@ -6,7 +6,17 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="ospfe.percorso_sla">
       
-<head></head>
+<head>
+	
+	<tal:styles metal:fill-slot="style_slot">
+	<style media="all" type="text/css">
+		.slaDataContent img {
+			display: none;
+		}
+	</style>
+	</tal:styles>
+	
+</head>
 
 <body>
 

@@ -36,8 +36,6 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
           required=True,
           vocabulary=[("M", "M"), ("F", "F")],
           widget=atapi.SelectionWidget(
-                    description=_(u'help_patientgender',
-                                    default=u''),
                     label=_(u'label_patientgender', default=u'Patient gender'),
                     )
     ),
@@ -68,8 +66,6 @@ SLAPatientSchema = folder.ATFolderSchema.copy() + atapi.Schema((
           required=False,
           vocabulary="appearanceTypeVocabulary",
           widget=atapi.SelectionWidget(
-                    description=_(u'help_appearancetype',
-                                    default=u''),
                     label=_(u'label_appearancetype', default=u'Appearance type'),
                     )
     ),
