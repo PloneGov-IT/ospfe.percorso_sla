@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.0 (unreleased)
+1.1.0 (2013-05-14)
 ------------------
 
 - La mail di avvertimento viene mandata in ogni stato di gravita' [keul]
