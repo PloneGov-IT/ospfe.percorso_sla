@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-05-14 14:17+0000\n"
+"POT-Creation-Date: 2013-06-07 09:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,7 +154,7 @@ msgid "label_title"
 msgstr ""
 
 #. Default: "Dear user,\n\nthis is a personal communication regarding the SLA Form ${sla_form_title}, created on ${sla_form_creation_date} by ${sla_form_owner}.\n\nThe SLA Form of patient ${patient} is in state \"${review_state}\". Follow the link below for visit the SLA form:\n\n${sla_form_url}\n\nRegards"
-#: ./adapters/mails/notify_doctor.py:74
+#: ./adapters/mails/notify_doctor.py:77
 msgid "mail_text_notify_doctor"
 msgstr ""
 
@@ -168,8 +168,8 @@ msgstr ""
 msgid "model_patient_label"
 msgstr ""
 
-#. Default: "[SLA Form] - SLA Form in state \"Red\""
-#: ./adapters/mails/notify_doctor.py:38
+#. Default: "[SLA Form] - SLA Form in state \"${review_state}\""
+#: ./adapters/mails/notify_doctor.py:42
 msgid "subject_notify_doctor"
 msgstr ""
 

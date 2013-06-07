@@ -9,7 +9,10 @@ class NotifyDoctor(PercorsoSLAMailBase):
     """
     Classe invio email ai medici. Estende PercorsoSLAMailBase
     """
-    
+
+    def su(self, value):
+        return safe_unicode(value, encoding=self.charset)
+
     def get_emails(self, users):
         emails = []
         for user in users:
@@ -35,10 +38,13 @@ class NotifyDoctor(PercorsoSLAMailBase):
     @property
     def _subject(self):
         _ = self.translate
+
         return _(msgid='subject_notify_doctor',
-                 default=u'[SLA Form] - SLA Form in state "Red"',
+                 default=u'[SLA Form] - SLA Form in state "${review_state}"',
                  domain="ospfe.percorso_sla",
-                 context=self.context)
+                 context=self.context,
+                 mapping={'review_state': self.su(self.translate(self.slaform_review_state, domain="plone"))},
+                )
     
     @property
     def slaformCreator(self):
@@ -60,15 +66,12 @@ class NotifyDoctor(PercorsoSLAMailBase):
     def _text(self):
         _ = self.translate
         
-        def su(value):
-            return safe_unicode(value, encoding=self.charset)
-        
-        mapping = dict(sla_form_title = su(self.context.title_or_id()),
-                       sla_form_creation_date = su(self.context.toLocalizedTime(self.context.created())),
-                       sla_form_owner = su(self.slaformCreator),
-                       review_state = su(self.translate(self.slaform_review_state, domain="plone")),
-                       patient = su(self.sla_patient.title_or_id()),
-                       sla_form_url = su(self.context.absolute_url()),
+        mapping = dict(sla_form_title = self.su(self.context.title_or_id()),
+                       sla_form_creation_date = self.su(self.context.toLocalizedTime(self.context.created())),
+                       sla_form_owner = self.su(self.slaformCreator),
+                       review_state = self.su(self.translate(self.slaform_review_state, domain="plone")),
+                       patient = self.su(self.sla_patient.title_or_id()),
+                       sla_form_url = self.su(self.context.absolute_url()),
                        )
         
         return _(msgid='mail_text_notify_doctor', default=u"""Dear user,
