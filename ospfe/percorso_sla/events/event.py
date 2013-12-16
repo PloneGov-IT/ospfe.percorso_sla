@@ -115,16 +115,22 @@ def create_sla_form(object, event):
                                        object.created().strftime('%d/%m/%Y'))
     title_field = object.getField('title-sla-form')
     if title_field:
-        title_field.set(object,title_sla_form)
+        title_field.set(object, title_sla_form)
         object.reindexObject()
-    
+
+
 def send_alert(object, event):
     """
     Evento al cambio di stato del form
     """
     wtool = getToolByName(object, "portal_workflow")
-    wf_state = wtool.getInfoFor(object,'review_state')
-    if wf_state in ('red', 'yellow', 'green'):
+    pc = getToolByName(object, "portal_catalog")
+    wf_state = wtool.getInfoFor(object, 'review_state')
+    parent = object.aq_parent
+    same_state_forms = pc(path="/".join(parent.getPhysicalPath()),
+                          portal_type=object.portal_type,
+                          review_state=wf_state)
+    if wf_state in ('red', 'yellow', 'green') and not same_state_forms:
         dc_notification = getAdapter(object, IPercorsoSLAMail, name="notify_doctor")
         dc_notification.send()
         logger.info('Notification to doctors sent')

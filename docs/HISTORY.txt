@@ -4,7 +4,7 @@ Changelog
 1.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- La mail di notifica arriva solamente se non c'è nessun altra scheda dello stesso colore [cekk]
 
 
 1.1.1 (2013-06-07)
