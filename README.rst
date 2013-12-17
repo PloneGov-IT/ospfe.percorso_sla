@@ -36,7 +36,8 @@ che sarà discusso in seguito.
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-02.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-02.png
 
-L'area del paziente appena creata, contiene una serie di form da compilare, che possono essere configurati a dovere secondo le necessità.
+L'area del paziente appena creata, contiene una serie di form da compilare, che possono essere configurati a dovere
+secondo le necessità.
 
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-03.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-03.png
@@ -52,7 +53,8 @@ Utilizzo da parte dei medici
 
 Perché i medici siano in grado di creare pazienti e compilare i form, devono avere un ruolo di **Contributore**.
 
-Della creazione di un paziente si è già parlato precedentemente. La compilazione del form, invece, permetterà solo di generare delle schede relative al paziente.
+Della creazione di un paziente si è già parlato precedentemente. La compilazione del form, invece, permetterà solo di
+generare delle schede relative al paziente.
 
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-06.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-06.png
@@ -63,21 +65,25 @@ Il medico creatore della scheda ha poi la possibilità di cambiare questo stato 
 .. figure:: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-07.png/image_preview
    :target: http://blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-0.1-07.png
 
-L'utlizzo dello stato "*Rosso*" determina una criticità di livello alto.
+L'utilizzo dello stato "*Rosso*" determina una criticità di livello alto.
 
 Tutti gli utenti di tutti i gruppi inseriti nella sezione "*Gruppi di notifica*" discussa sopra,
-saranno contattati via e-mail ad ogni cambio di stato del documento.
+saranno contattati via e-mail ad ogni cambio di stato del documento se la scheda viene portata in uno stato non
+ancora utilizzato da altre schede per quel tipo di osservazione.
 
 Modello per i pazienti
 ======================
 
-Nella configurazione del portale, è presente un pannello di controllo che permette di impostare un Paziente "base" da utilizzare come modello per i futuri pazienti creati.
+Nella configurazione del portale, è presente un pannello di controllo che permette di impostare un Paziente "base"
+da utilizzare come modello per i futuri pazienti creati.
 
 .. figure:: http://admin.blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-settings.png/image_mini
    :target: http://admin.blog.redturtle.it/pypi-images/ospfe.percorso_sla/ospfe.percorso_sla-settings.png
 
-Il paziente modello non è altro che un semplice contenuto di tipo "Paziente" al cui interno si vanno a creare una serie di form predefiniti che saranno utilizzati come base di partenza per i successivi pazienti.
-Alla creazione di nuovi pazienti, vengono copiati al loro interno i form presenti nel paziente modello, oltre alla lista dei suoi "*Gruppi di notifica*".
+Il paziente modello non è altro che un semplice contenuto di tipo "Paziente" al cui interno si vanno a creare una
+serie di form predefiniti che saranno utilizzati come base di partenza per i successivi pazienti.
+Alla creazione di nuovi pazienti, vengono copiati al loro interno i form presenti nel paziente modello, oltre alla lista
+dei suoi "*Gruppi di notifica*".
 
 **NBB**: il form generato contiene un *campo nascosto* con id "``title-sla-form``".
 Tale campo va mantenuto per poter usufruire della funzionalità di generazione automatica del titolo
